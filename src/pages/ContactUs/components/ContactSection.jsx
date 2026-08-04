@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ContactSection() {
   return (
-    <div className="container mx-auto px-6 py-24">
+    <div className="container mx-auto px-6 py-12 md:py-24">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-start">
         
         {/* Left Column: Form */}
