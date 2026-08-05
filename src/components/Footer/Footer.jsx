@@ -42,7 +42,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm font-medium text-gray-700">
               <li><Link to="/" className="hover:text-primary transition-colors">Home</Link></li>
               <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link to="/blogs" className="hover:text-primary transition-colors">Blogs</Link></li>
+              {/* <li><Link to="/blogs" className="hover:text-primary transition-colors">Blogs</Link></li> */}
               <li><Link to="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
               <li><Link to="/login" className="hover:text-primary transition-colors">Login</Link></li>
               <li><Link to="/signup" className="hover:text-primary transition-colors">Signup</Link></li>
