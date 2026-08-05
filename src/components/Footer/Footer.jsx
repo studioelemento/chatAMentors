@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa'
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaYoutube , FaPinterest } from 'react-icons/fa'
 import { MapPin, Phone, Mail } from 'lucide-react'
+import logo from '../../assets/img-Home/Chatmentorz.png'
 
 export default function Footer() {
   return (
@@ -12,29 +13,25 @@ export default function Footer() {
           {/* Column 1: Logo & Socials */}
           <div className="md:col-span-1">
             <Link to="/" className="flex flex-col mb-8">
-              <div className="flex items-center gap-1">
-                <div className="text-primary font-bold text-4xl leading-none">
-                  <span className="text-primary">M</span>
-                </div>
-                <span className="text-3xl font-bold text-secondary tracking-tight">ChatMentorz</span>
+              <div className="flex items-center ">
+                <img src={logo} alt="ChatMentorz Logo" className="h-20 w-auto" />
               </div>
-              <span className="text-[12px] text-blue-600 font-semibold tracking-wider uppercase mt-1 flex items-center">
-                <span className="inline-block w-4 h-4 bg-blue-600 rounded-full mr-1 opacity-20"></span>
-                Meta Business Partner
-              </span>
             </Link>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61578251438146" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
                 <FaFacebookF size={16} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
-                <FaTwitter size={16} />
+              <a href="https://www.youtube.com/@Chtmentorz" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+                <FaYoutube size={16} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/company/chat-mentorz/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
                 <FaLinkedinIn size={16} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+              <a href="https://www.instagram.com/chatmentorz/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
                 <FaInstagram size={16} />
+              </a>
+              <a href="https://www.pinterest.com/chatmentorz/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+                <FaPinterest size={16} />
               </a>
             </div>
           </div>
@@ -107,23 +104,26 @@ export default function Footer() {
           
           {/* Bottom Left Socials */}
           <div className="flex gap-4">
-            <a href="#" className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white hover:bg-green-600 transition-colors">
+            <a href="https://www.facebook.com/profile.php?id=61578251438146" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white hover:bg-green-600 transition-colors">
               <FaFacebookF size={14} />
             </a>
-            <a href="#" className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white hover:bg-green-600 transition-colors">
+            <a href="https://www.youtube.com/@Chtmentorz" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white hover:bg-green-600 transition-colors">
               <FaYoutube size={14} />
             </a>
-            <a href="#" className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white hover:bg-green-600 transition-colors">
+            <a href="https://www.linkedin.com/company/chat-mentorz/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white hover:bg-green-600 transition-colors">
               <FaLinkedinIn size={14} />
             </a>
-            <a href="#" className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white hover:bg-green-600 transition-colors">
+            <a href="https://www.instagram.com/chatmentorz/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white hover:bg-green-600 transition-colors">
               <FaInstagram size={14} />
+            </a>
+            <a href="https://www.pinterest.com/chatmentorz/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white hover:bg-green-600 transition-colors">
+              <FaPinterest size={14} />
             </a>
           </div>
 
           {/* Copyright */}
           <div className="text-primary text-sm font-medium">
-            Copyright 2025 ChatMentorz All Rights Reserved.
+            Copyright 2026 ChatMentorz All Rights Reserved.
           </div>
           
         </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Menu, X } from 'lucide-react';
+import logo from '../../assets/img-Home/Chatmentorz.png';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,16 +20,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto py-4 px-6 lg:px-8 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Link to="/" onClick={handleNavClick} className="flex flex-col">
-            <div className="flex items-center gap-1">
-              <div className="text-primary font-bold text-3xl leading-none">
-                <span className="text-primary">M</span>
-              </div>
-              <span className="text-2xl font-extrabold text-[#0f172a] tracking-tight">ChatMentorz</span>
+            <div className="flex items-center">
+              <img src={logo} alt="ChatMentorz Logo" className="h-[60px] w-auto object-contain" />
             </div>
-            <span className="text-[10px] text-blue-600 font-semibold tracking-wider uppercase mt-0.5 flex items-center">
-              <span className="inline-block w-3 h-3 bg-blue-600 rounded-full mr-1 opacity-20"></span>
-              Meta Business Partner
-            </span>
           </Link>
         </div>
 
@@ -45,17 +39,17 @@ export default function Navbar() {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center gap-4">
-          <Link to="/login" onClick={handleNavClick} className="font-medium text-secondary border border-gray-200 px-6 py-2 rounded-md hover:border-primary hover:text-primary transition-colors">
+          <a href="https://app.chatmentorz.com/en/login" className="font-medium text-secondary border border-gray-200 px-6 py-2 rounded-md hover:border-primary hover:text-primary transition-colors">
             Login
-          </Link>
-          <Link to="/signup" onClick={handleNavClick} className="bg-primary text-white px-6 py-2 rounded-md font-medium hover:bg-green-600 transition-colors">
+          </a>
+          <a href="https://app.chatmentorz.com/en/new-bot" className="bg-primary text-white px-6 py-2 rounded-md font-medium hover:bg-green-600 transition-colors">
             Sign up
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden p-2 text-gray-600 hover:text-primary transition-colors"
+          className="md:hidden bg-primary text-white p-2 rounded flex items-center justify-center hover:bg-green-600 transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -64,23 +58,38 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-gray-100 absolute w-full left-0 top-[100%] shadow-lg shadow-black/5">
-          <div className="flex flex-col px-6 py-4 gap-4 text-sm font-medium text-gray-700">
-            <Link to="/" onClick={handleMobileNavClick} className="text-primary py-2 border-b border-gray-50">Home</Link>
-            <Link to="/about" onClick={handleMobileNavClick} className="hover:text-primary py-2 border-b border-gray-50">About Us</Link>
-            <Link to="/products" onClick={handleMobileNavClick} className="flex items-center justify-between hover:text-primary py-2 border-b border-gray-50">
-              Products <ChevronDown size={16} className="text-gray-400" />
-            </Link>
-            <Link to="/blogs" onClick={handleMobileNavClick} className="hover:text-primary py-2 border-b border-gray-50">Blogs</Link>
-            <Link to="/contact" onClick={handleMobileNavClick} className="hover:text-primary py-2">Contact Us</Link>
+        <div className="md:hidden absolute w-full left-0 top-[100%] bg-transparent z-50 pt-2">
+          <div className="px-6 flex flex-col items-end w-full">
             
-            <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-100">
-              <Link to="/login" onClick={handleMobileNavClick} className="text-center font-medium text-gray-700 border border-gray-200 px-6 py-2.5 rounded-md hover:bg-gray-50">
+            {/* Tabs */}
+            <div className="flex items-end gap-1 mb-[-1px] relative z-10 w-full justify-end pr-4">
+              <a href="https://app.chatmentorz.com/en/login" className="px-8 py-2 border border-primary border-b-0 text-primary bg-white rounded-t-xl text-sm font-semibold">
                 Login
-              </Link>
-              <Link to="/signup" onClick={handleMobileNavClick} className="text-center bg-primary text-white px-6 py-2.5 rounded-md font-medium hover:bg-green-600">
+              </a>
+              <a href="https://app.chatmentorz.com/en/new-bot" className="px-8 py-2.5 bg-primary text-white rounded-t-xl text-sm font-semibold">
                 Sign up
+              </a>
+            </div>
+
+            {/* Menu Items Box */}
+            <div className="w-full bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 overflow-hidden relative z-20">
+              <Link to="/" onClick={handleMobileNavClick} className="block w-full text-left bg-primary text-white py-4 px-6 text-lg font-medium">
+                Home
               </Link>
+              <div className="px-4">
+                <Link to="/about" onClick={handleMobileNavClick} className="block w-full text-left text-[#00a68d] hover:bg-gray-50 py-4 px-4 text-lg border-b border-gray-50">
+                  About Us
+                </Link>
+                <Link to="/products" onClick={handleMobileNavClick} className="flex items-center justify-between w-full text-left text-[#00a68d] hover:bg-gray-50 py-4 px-4 text-lg border-b border-gray-50">
+                  Products <ChevronDown size={20} className="text-[#00a68d]" />
+                </Link>
+                <Link to="/blogs" onClick={handleMobileNavClick} className="block w-full text-left text-[#00a68d] hover:bg-gray-50 py-4 px-4 text-lg border-b border-gray-50">
+                  Blogs
+                </Link>
+                <Link to="/contact" onClick={handleMobileNavClick} className="block w-full text-left text-[#00a68d] hover:bg-gray-50 py-4 px-4 text-lg">
+                  Contact Us
+                </Link>
+              </div>
             </div>
           </div>
         </div>
