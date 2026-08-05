@@ -33,7 +33,7 @@ export default function Navbar() {
           <Link to="/products" onClick={handleNavClick} className="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors group relative">
             Products <ChevronDown size={14} className="text-gray-400 group-hover:text-primary" />
           </Link>
-          <Link to="/blogs" onClick={handleNavClick} className="hover:text-primary transition-colors">Blogs</Link>
+          {/* <Link to="/blogs" onClick={handleNavClick} className="hover:text-primary transition-colors">Blogs</Link> */}
           <Link to="/contact" onClick={handleNavClick} className="hover:text-primary transition-colors">Contact Us</Link>
         </nav>
 
@@ -83,9 +83,9 @@ export default function Navbar() {
                 <Link to="/products" onClick={handleMobileNavClick} className="flex items-center justify-between w-full text-left text-[#00a68d] hover:bg-gray-50 py-4 px-4 text-lg border-b border-gray-50">
                   Products <ChevronDown size={20} className="text-[#00a68d]" />
                 </Link>
-                <Link to="/blogs" onClick={handleMobileNavClick} className="block w-full text-left text-[#00a68d] hover:bg-gray-50 py-4 px-4 text-lg border-b border-gray-50">
+                {/* <Link to="/blogs" onClick={handleMobileNavClick} className="block w-full text-left text-[#00a68d] hover:bg-gray-50 py-4 px-4 text-lg border-b border-gray-50">
                   Blogs
-                </Link>
+                </Link> */}
                 <Link to="/contact" onClick={handleMobileNavClick} className="block w-full text-left text-[#00a68d] hover:bg-gray-50 py-4 px-4 text-lg">
                   Contact Us
                 </Link>
