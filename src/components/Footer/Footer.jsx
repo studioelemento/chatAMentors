@@ -49,8 +49,8 @@ export default function Footer() {
               <li><Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link></li>
               <li><Link to="/cancellation" className="hover:text-primary transition-colors">Cancellation & Refund Policy</Link></li>
-              {/* <li><Link to="/gdpr" className="hover:text-primary transition-colors leading-snug block">GDPR-compliant Data Processing Agreement</Link></li> */}
-              <li><Link to="/knowledge-base" className="hover:text-primary transition-colors">Knowledge Base</Link></li>
+              <li><Link to="/gdpr" className="hover:text-primary transition-colors leading-snug block">GDPR-compliant Data Processing Agreement</Link></li>
+              {/* <li><Link to="/knowledge-base" className="hover:text-primary transition-colors">Knowledge Base</Link></li> */}
             </ul>
           </div>
 
