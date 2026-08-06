@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import imgAboutPhones from '../../../assets/img-Home/homeAboutUs.png'
 
@@ -26,14 +27,18 @@ export default function AboutSection() {
                 At ChatMentorz, we specialize in AI-powered chatbot automation designed to help businesses scale faster and engage smarter. Our advanced NLP-driven chatbot solutions seamlessly integrate across WhatsApp, Instagram, Facebook, websites, and more, enabling real-time, personalized customer interactions.
               </p>
               <p>
-                We help modern businesses automate conversations, increase conversions, and improve customer experience through intelligent automation. Whether it's lead generation, customer support, or sales engagement, our platform ensures efficient communication and measurable growth.
+                We help modern businesses automate conversations, increase conversions, and improve customer experience through intelligent automation. Whether it's lead generation, customer support, or sales engagement, our platform ensures communication and measurable growth.
               </p>
             </div>
             
-            <button className="bg-white text-primary px-5 py-2.5 rounded-lg font-semibold text-sm inline-flex items-center gap-1.5 hover:bg-gray-50 transition-colors shadow-md">
+            <Link 
+              to="/about" 
+              onClick={() => window.scrollTo(0, 0)}
+              className="bg-white text-primary px-5 py-2.5 rounded-lg font-semibold text-sm inline-flex items-center gap-1.5 hover:bg-gray-50 transition-colors shadow-md"
+            >
               View More 
               <ArrowUpRight size={16} strokeWidth={2.5} />
-            </button>
+            </Link>
           </div>
 
           {/* Right Content - Phone Mockups */}
