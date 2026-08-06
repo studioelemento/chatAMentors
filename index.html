@@ -9,5 +9,446 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Chat Widget Start (Commented out for development)
+    <script src="https://app.chatmentorz.com/webchat/plugin.js?v=6"></script><script>ktt10.setup({id:"KUsttDfxcXPOqm",accountId:"1094393",color:"#006dff"})</script>
+
+    <div class="chat-cta-bubble">
+      <span class="dance">How can I help you?</span>
+      <span class="wave">👋</span>
+    </div>
+
+    <style>
+    .ktt10-btn {
+      width: 60px !important;
+      height: 60px !important;
+      color: #fff !important;
+      border-radius: 50% !important;
+      padding: 0px !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      border: 0 !important;
+      position: fixed !important;
+      right: 20px !important;
+      bottom: 20px !important;
+      outline: none !important;
+      cursor: pointer !important;
+      z-index: 8888 !important;
+      box-shadow: 0 2px 18px 0 rgb(0 0 29 / 16%) !important;
+      transition: transform .16s, box-shadow .16s !important;
+      background: #007bff !important;
+    }
+    .ktt10-btn img {
+      display: block !important;
+      width: 60%;
+      height: 60%;
+      object-fit: contain;
+    }
+    .ktt10-btn:hover {
+      transform: scale(1.08) !important;
+      box-shadow: 0 4px 28px 0 rgb(0 0 39 / 23%) !important;
+    }
+
+    .my-message .message-text {
+      background-color: #007bff !important;
+    }
+
+    /* Click to action bubble styles */
+    .chat-cta-bubble {
+      position: fixed;
+      bottom: calc(20px + 60px + 12px);
+      right: 20px;
+      background: #fff;
+      color: #181818;
+      border-radius: 0px;
+      padding: 6px 18px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      font-size: 0.78rem;
+      font-weight: 600;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      border: 1px solid #007bff;
+      cursor: pointer;
+      pointer-events: auto;
+      user-select: none;
+      animation: pulse 2.5s infinite;
+      animation-timing-function: ease-in-out;
+    }
+    .chat-cta-bubble::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      right: 24px;
+      width: 8px;
+      height: 8px;
+      background: #fff;
+      transform: rotate(45deg);
+      box-shadow: 1px 1px 2px rgba(0,0,0,0.04);
+      z-index: -1;
+    }
+    @keyframes dance {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0px); }
+      25% { transform: translateX(-4px); }
+      75% { transform: translateX(4px); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      25%, 75% { transform: translateY(-6px); }
+    }
+    @keyframes fade {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    @keyframes wave {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(10deg); }
+      50% { transform: rotate(-10deg); }
+      75% { transform: rotate(10deg); }
+    }
+    .chat-cta-bubble span.wave {
+      display: inline-block;
+      animation: wave 2s infinite;
+      margin-left: 6px;
+    }
+
+    .ktt10-btn {
+      background-image: url('https://cloudmediastorage.fylestor.com/3732/file-manager/baashyam-livechat-2024.png-1776417033390.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 60% 60%;
+    }
+    .ktt10-flt {
+      height: 58vh !important;
+      width: 23vw !important;
+      border-radius: 14px !important;
+    }
+    .ktt10-iframe {
+      height: 58vh !important;
+      width: 23vw !important;
+      border-radius: 14px !important;
+    }
+
+    /* User message inherits button colors */
+    .my-message .message-text {
+      background-color: #007bff !important;
+    }
+
+    .my-message .message-text,
+    .my-message .message-text * {
+      color: #ffffff !important;
+    }
+
+    .other-message .message-text {
+      background-color: #eeeeee !important;
+    }
+
+    .other-message .message-text,
+    .other-message .message-text * {
+      color: #333333 !important;
+    }
+
+    /* Chat header inherits button colors with responsive sizing */
+    .chat-header {
+      background-color: #0977ec !important;
+      background-image: none !important;
+      height: 62px !important;
+      min-height: 62px !important;
+      padding: 9px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      box-sizing: border-box !important;
+      position: relative !important;
+      overflow: visible !important;
+    }
+
+    .chat-header,
+    .chat-header *,
+    .chat-header p,
+    .chat-header b {
+      color: #ffffff !important;
+    }
+
+    /* Responsive header text sizing */
+    .chat-header h1,
+    .chat-header h2,
+    .chat-header h3,
+    .chat-header h4,
+    .chat-header p,
+    .chat-header span,
+    .chat-header div {
+      font-size: 16px !important;
+      line-height: 1.2 !important;
+      margin: 0 !important;
+      
+      transform: translateX(0%) !important;
+      
+    }
+
+    /* Custom header text styling */
+    .chat-header .custom-header-text {
+      font-size: 16px !important;
+      line-height: 1.2 !important;
+      margin: 0 !important;
+      flex: 1 !important;
+      
+      transform: translateX(0%) !important;
+      
+    }
+
+    /* Header image styling */
+    .chat-header .header-image {
+      position: absolute !important;
+      top: 50% !important;
+      left: 0% !important;
+      width: 32px !important;
+      height: 32px !important;
+      object-fit: cover !important;
+      border-radius: 50% !important;
+      margin: 0 !important;
+      margin-left: -0px !important;
+      display: none !important;
+      
+      transform: translateY(-50%) !important;
+      z-index: 10 !important;
+      transition: all 0.2s ease !important;
+    }
+
+    /* Responsive close button sizing with uniform padding */
+    .ktt10-close,
+    .chat-header .close,
+    .chat-header .close-btn,
+    .chat-header .close-icon {
+      width: 12px !important;
+      height: 12px !important;
+      min-width: 12px !important;
+      min-height: 12px !important;
+      max-width: 12px !important;
+      max-height: 12px !important;
+      padding: 4px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+      cursor: pointer !important;
+      line-height: 1 !important;
+      vertical-align: middle !important;
+    }
+
+    .ktt10-close img,
+    .chat-header .close img,
+    .chat-header .close-btn img,
+    .chat-header .close-icon img {
+      width: 4px !important;
+      height: 4px !important;
+      min-width: 4px !important;
+      min-height: 4px !important;
+      max-width: 4px !important;
+      max-height: 4px !important;
+      object-fit: contain !important;
+      flex-shrink: 0 !important;
+      display: block !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      vertical-align: middle !important;
+      line-height: 1 !important;
+    }
+
+    /* Attachment and mic icons inherit button colors */
+    :root {
+      --primaryColor: #007bff !important;
+    }
+
+    /* Ensure SVG icons use the primary color */
+    .uploadBtt svg path {
+      fill: #007bff !important;
+    }
+
+    .btn.uploadBtt svg path {
+      fill: #007bff !important;
+    }
+
+    button.uploadBtt svg path {
+      fill: #007bff !important;
+    }
+
+    /* Also target any SVG with the CSS variable */
+    svg path[style*="var(--primaryColor)"] {
+      fill: #007bff !important;
+    }
+
+    /* Hide the existing typing gif image */
+    .message-delay img {
+      display: none !important;
+    }
+
+    /* Insert "typing" text in italic using ::before */
+    .message-delay .animate__animated::before {
+      content: 'typing';
+      font-style: italic;
+      font-size: 12px;
+      color: #555;
+      font-family: sans-serif;
+      margin-right: 4px;
+    }
+
+    /* Create animated dots using ::after */
+    .message-delay .animate__animated::after {
+      content: '';
+      display: inline-block;
+      font-size: 14px;
+      vertical-align: middle;
+      width: 1em;
+      text-align: left;
+      font-weight: bold;
+      animation: typing-dots 1.5s infinite;
+      color: #555;
+    }
+
+    @keyframes typing-dots {
+      0%   { content: ''; }
+      33%  { content: '.'; }
+      66%  { content: '..'; }
+      100% { content: '...'; }
+    }
+    /* Chat area background styling - messages only */
+    .chat-area {
+      background-color: #ffffff !important;
+      background-image: none !important;
+    }
+
+    /* Explicitly reset header background to its configured style */
+    .chat-header {
+      background-image: none !important;
+      background-color: #0977ec !important;
+    }
+
+    /* Explicitly reset input area background */
+    .chat-input {
+      background-image: none !important;
+      background-color: #ffffff !important;
+    }
+
+
+    /* Message text padding and border radius styling */
+    .message-text,
+    .my-message .message-text,
+    .other-message .message-text {
+      padding: 12px !important;
+      border-radius: 8px !important;
+      box-sizing: border-box !important;
+    }
+
+
+    /* Panel dimension styling */
+    .ktt10-flt, .ktt10-iframe {
+      height: 58vh !important;
+      border-radius: 14px !important;
+    }
+
+    @media (min-width: 768px) {
+      .ktt10-flt, .ktt10-iframe {
+        width: 23vw !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .ktt10-flt, .ktt10-iframe {
+        width: 85vw !important;
+      }
+    }
+
+
+    /* Custom header text injection via CSS */
+    .chat-header::before {
+      content: 'Chat Support' !important;
+      font-size: 16px !important;
+      line-height: 1.2 !important;
+      margin: 0 !important;
+      flex: 1 !important;
+      
+      transform: translateX(0%) !important;
+      
+      position: relative !important;
+      z-index: 5 !important;
+    }
+
+    /* Hide original header text when custom text is used */
+    .chat-header h1,
+    .chat-header h2,
+    .chat-header h3,
+    .chat-header h4,
+    .chat-header p:not(.custom-header-text),
+    .chat-header span:not(.custom-header-text),
+    .chat-header div:not(.custom-header-text) {
+      display: none !important;
+    }
+
+
+    </style>
+    <script>
+    // After 15 seconds, add 'ktt10-flt2' class to open chat widget container
+    setTimeout(() => {
+      const chatContainer = document.querySelector('.ktt10-flt');
+      const ctaBubble = document.querySelector('.chat-cta-bubble');
+      if(chatContainer && !chatContainer.classList.contains('ktt10-flt2')) {
+        chatContainer.classList.add('ktt10-flt2');
+        // Also set the iframe src from data-src if empty to load chat content
+        const iframe = chatContainer.querySelector('iframe.ktt10-iframe');
+        if(iframe && !iframe.src) {
+          iframe.src = iframe.getAttribute('data-src');
+        }
+        // Hide the "Need help?" bubble when chat opens
+        if(ctaBubble) {
+          ctaBubble.style.display = 'none';
+        }
+      }
+    }, 15000); // 15 seconds delay
+    </script>
+    <script>
+    // Add click event to close bubble when clicked
+    const ctaBubble = document.querySelector('.chat-cta-bubble');
+    if(ctaBubble) {
+      ctaBubble.addEventListener('click', () => {
+        ctaBubble.style.display = 'none';
+      });
+    }
+
+    // Monitor for chat widget opening and close bubble
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          const target = mutation.target;
+          if (target.classList.contains('ktt10-flt2')) {
+            const ctaBubble = document.querySelector('.chat-cta-bubble');
+            if(ctaBubble) {
+              ctaBubble.style.display = 'none';
+            }
+          }
+        }
+      });
+    });
+
+    // Start observing when chat container is available
+    const checkContainer = setInterval(() => {
+      const chatContainer = document.querySelector('.ktt10-flt');
+      if(chatContainer) {
+        observer.observe(chatContainer, { attributes: true, attributeFilter: ['class'] });
+        clearInterval(checkContainer);
+      }
+    }, 100);
+    </script>
+    Chat Widget End -->
   </body>
 </html>
