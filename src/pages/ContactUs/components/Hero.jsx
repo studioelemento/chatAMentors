@@ -5,14 +5,15 @@ import bgImage from '../../../assets/img-Home/chat-bot-service-concept-enhancing
 
 export default function Hero() {
   return (
-    <section 
+    <section
+      id="hero"
       className="relative pt-32 pb-40 overflow-hidden flex items-center justify-center bg-gray-100"
     >
       {/* Background Image with overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={bgImage} 
-          alt="Contact Us Background" 
+        <img
+          src={bgImage}
+          alt="Contact Us Background"
           className="w-full h-full object-cover object-center opacity-40 blur-[2px]"
         />
         <div className="absolute inset-0 bg-white/40 mix-blend-overlay"></div>

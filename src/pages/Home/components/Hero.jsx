@@ -4,7 +4,7 @@ import heroRobot from '../../../assets/img-Home/homeHero.png'
 
 export default function Hero() {
   return (
-    <section className="relative pt-20 pb-24 overflow-hidden bg-white">
+    <section id="hero" className="relative pt-20 pb-24 overflow-hidden bg-white">
       {/* Faint vertical grid lines background */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none opacity-100"

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaYoutube , FaPinterest } from 'react-icons/fa'
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaYoutube, FaPinterest } from 'react-icons/fa'
 import { MapPin, Phone, Mail } from 'lucide-react'
 import logo from '../../assets/img-Home/Chatmentorz.png'
 
@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="bg-white pt-16 border-t border-gray-100 font-sans relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          
+
           {/* Column 1: Logo & Socials */}
           <div className="md:col-span-1">
             <Link to="/" className="flex flex-col mb-8">
@@ -44,8 +44,8 @@ export default function Footer() {
               <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
               {/* <li><Link to="/blogs" className="hover:text-primary transition-colors">Blogs</Link></li> */}
               <li><Link to="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
-              <li><Link to="/login" className="hover:text-primary transition-colors">Login</Link></li>
-              <li><Link to="/signup" className="hover:text-primary transition-colors">Signup</Link></li>
+              <li><a href="https://app.chatmentorz.com/en/login" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Login</a></li>
+              <li><a href="https://app.chatmentorz.com/en/new-bot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Signup</a></li>
               <li><Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link></li>
               <li><Link to="/cancellation" className="hover:text-primary transition-colors">Cancellation & Refund Policy</Link></li>
@@ -70,7 +70,7 @@ export default function Footer() {
           {/* Column 4: Contact Info */}
           <div>
             <h4 className="text-lg font-bold text-secondary mb-2 uppercase">CHATMENTORZ PRIVATE LIMITED</h4>
-            
+
             <div className="mt-6">
               <h5 className="text-lg font-bold text-secondary mb-2">Address</h5>
               <div className="flex items-start gap-2 text-sm font-medium text-gray-700">
@@ -101,7 +101,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-gray-200 py-4">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          
+
           {/* Bottom Left Socials */}
           <div className="flex gap-4">
             <a href="https://www.facebook.com/profile.php?id=61578251438146" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white hover:bg-green-600 transition-colors">
@@ -125,10 +125,10 @@ export default function Footer() {
           <div className="text-primary text-sm font-medium">
             Copyright 2026 ChatMentorz All Rights Reserved.
           </div>
-          
+
         </div>
       </div>
-      
+
     </footer>
   )
 }
