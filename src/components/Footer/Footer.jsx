@@ -44,8 +44,8 @@ export default function Footer() {
               <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
               {/* <li><Link to="/blogs" className="hover:text-primary transition-colors">Blogs</Link></li> */}
               <li><Link to="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
-              <li><a href="https://app.chatmentorz.com/en/login" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Login</a></li>
-              <li><a href="https://app.chatmentorz.com/en/new-bot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Signup</a></li>
+              <li><a href="https://app.chatmentorz.com/en/login" className="hover:text-primary transition-colors">Login</a></li>
+              <li><a href="https://app.chatmentorz.com/en/new-bot" className="hover:text-primary transition-colors">Signup</a></li>
               <li><Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link></li>
               <li><Link to="/cancellation" className="hover:text-primary transition-colors">Cancellation & Refund Policy</Link></li>
