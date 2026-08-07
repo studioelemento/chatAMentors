@@ -1,8 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Check } from 'lucide-react'
 import heroRobot from '../../../assets/img-Home/homeHero.png'
 
 export default function Hero() {
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('submitting');
+    
+    const formData = new FormData(e.target);
+    formData.append('_subject', 'New Demo Request from chatmentorz.in');
+    formData.append('_captcha', 'false'); // disable recaptcha to avoid redirect
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/chatmentorz@gmail.com', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        setStatus('success');
+        e.target.reset();
+        setTimeout(() => setStatus(''), 5000);
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
   return (
     <section id="hero" className="relative pt-20 pb-24 overflow-hidden bg-white">
       {/* Faint vertical grid lines background */}
@@ -32,16 +63,19 @@ export default function Hero() {
             </h1>
             
             {/* Email Input & Button */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center w-full max-w-[460px] bg-transparent sm:bg-gray-100 rounded-2xl sm:rounded-full p-0 sm:p-1.5 mt-8 gap-3 sm:gap-0 relative z-20">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch sm:items-center w-full max-w-[460px] bg-transparent sm:bg-gray-100 rounded-2xl sm:rounded-full p-0 sm:p-1.5 mt-8 gap-3 sm:gap-0 relative z-20">
               <input 
                 type="email" 
+                name="Email"
+                required
                 placeholder="Enter your email" 
                 className="flex-grow bg-gray-100 sm:bg-transparent rounded-full sm:rounded-none outline-none py-3 px-6 text-gray-600 placeholder-gray-400 font-medium"
               />
-              <button className="bg-primary text-white px-8 py-3 rounded-full font-bold hover:bg-green-600 transition-colors cursor-pointer whitespace-nowrap shadow-sm w-full sm:w-auto">
-                Book a Demo
+              <button disabled={status === 'submitting'} type="submit" className="bg-primary text-white px-8 py-3 rounded-full font-bold hover:bg-green-600 transition-colors cursor-pointer whitespace-nowrap shadow-sm w-full sm:w-auto disabled:opacity-70">
+                {status === 'submitting' ? 'Sending...' : (status === 'success' ? 'Requested!' : 'Book a Demo')}
               </button>
-            </div>
+            </form>
+            {status === 'error' && <p className="text-red-500 text-sm mt-2 relative z-20">Oops! Something went wrong.</p>}
             
             {/* Checkmarks */}
             <div className="flex flex-col sm:flex-row gap-6 pt-6 relative z-20">
