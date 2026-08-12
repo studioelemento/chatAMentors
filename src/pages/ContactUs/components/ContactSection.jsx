@@ -67,7 +67,7 @@ export default function ContactSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input 
                 type="email" 
-                name="Email"
+                name="email"
                 required
                 placeholder="Email Address" 
                 className="w-full bg-[#f1f1f1] text-gray-700 px-6 py-4 rounded-full focus:outline-none focus:ring-2 focus:ring-[#01ab4a]/50 transition-all placeholder-gray-400" 

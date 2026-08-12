@@ -66,7 +66,7 @@ export default function Hero() {
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch sm:items-center w-full max-w-[460px] bg-transparent sm:bg-gray-100 rounded-2xl sm:rounded-full p-0 sm:p-1.5 mt-8 gap-3 sm:gap-0 relative z-20">
               <input 
                 type="email" 
-                name="Email"
+                name="email"
                 required
                 placeholder="Enter your email" 
                 className="flex-grow bg-gray-100 sm:bg-transparent rounded-full sm:rounded-none outline-none py-3 px-6 text-gray-600 placeholder-gray-400 font-medium"

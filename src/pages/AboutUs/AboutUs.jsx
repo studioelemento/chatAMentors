@@ -16,7 +16,7 @@ export default function AboutUs() {
       <Services />
       <TrustLogos />
       <WhyChoose />
-      <OurTeam />
+      {/* <OurTeam /> */}
     </div>
   );
 }

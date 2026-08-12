@@ -107,7 +107,7 @@ export default function GetInTouch() {
                   />
                   <input 
                     type="email" 
-                    name="Email"
+                    name="email"
                     required
                     placeholder="Your Email" 
                     className="w-full bg-[#f3f4f6] text-gray-700 px-6 py-4 rounded-full text-sm outline-none border border-transparent focus:border-[#1e9a50] focus:bg-white transition-colors"
