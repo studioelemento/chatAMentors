@@ -10,6 +10,7 @@ import AboutUs from './pages/AboutUs/AboutUs'
 import Products from './pages/Products/Products'
 import Blogs from './pages/Blogs/Blogs'
 import ContactUs from './pages/ContactUs/ContactUs'
+import OmniChannelTeamInboxPage from './pages/Products/ProductsPage'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/products/omni-channel-team-inbox" element={<OmniChannelTeamInboxPage />} />
         </Routes>
       </main>
       <Footer />

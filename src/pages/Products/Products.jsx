@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
   FaNetworkWired, 
   FaWhatsapp, 
@@ -84,17 +85,28 @@ export default function Products() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-        {products.map((product, index) => (
-          <div key={index} className="flex flex-col items-start text-left group hover:scale-[1.02] transition-transform duration-300">
-            <div className="mb-4 bg-gray-50 p-3 rounded-xl">
-              {product.icon}
+        {products.map((product, index) => {
+          const isOmniInbox = product.title === "Omni Channel Team Inbox";
+          const cardContent = (
+            <div key={index} className={`flex flex-col items-start text-left group hover:scale-[1.02] transition-transform duration-300 ${isOmniInbox ? 'cursor-pointer' : ''}`}>
+              <div className="mb-4 bg-gray-50 p-3 rounded-xl">
+                {product.icon}
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">{product.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {product.description}
+              </p>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">{product.title}</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              {product.description}
-            </p>
-          </div>
-        ))}
+          );
+
+          return isOmniInbox ? (
+            <Link key={index} to="/products/omni-channel-team-inbox" className="no-underline">
+              {cardContent}
+            </Link>
+          ) : (
+            <React.Fragment key={index}>{cardContent}</React.Fragment>
+          );
+        })}
       </div>
     </div>
   );
