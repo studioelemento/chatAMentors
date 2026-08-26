@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  FaNetworkWired, 
-  FaWhatsapp, 
-  FaPlayCircle, 
-  FaCogs, 
-  FaRobot, 
-  FaProjectDiagram, 
-  FaMoneyCheckAlt, 
-  FaQrcode, 
-  FaRegCommentDots, 
-  FaHeadset, 
-  FaSitemap 
+import {
+  FaNetworkWired,
+  FaWhatsapp,
+  FaPlayCircle,
+  FaCogs,
+  FaRobot,
+  FaProjectDiagram,
+  FaMoneyCheckAlt,
+  FaQrcode,
+  FaRegCommentDots,
+  FaHeadset,
+  FaSitemap
 } from 'react-icons/fa';
 
 export default function Products() {
@@ -83,12 +83,18 @@ export default function Products() {
       <div className="mb-8 border-b pb-4">
         <h1 className="text-xl font-bold uppercase tracking-wider text-gray-800">Products</h1>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
         {products.map((product, index) => {
           const isOmniInbox = product.title === "Omni Channel Team Inbox";
+          const isWhatsappCommerce = product.title === "Whatsapp Commerce";
+          const isOmniCRM = product.title === "Chatmentorz Omni Channel CRM";
+          const isSmartKeywordAutomation = product.title === "Smart Keyword Automation";
+          const isWhatsappCatalogAutomation = product.title === "Whatsapp Catalog Automation";
+          const isAiAgent = product.title === "AI AGENT";
+
           const cardContent = (
-            <div key={index} className={`flex flex-col items-start text-left group hover:scale-[1.02] transition-transform duration-300 ${isOmniInbox ? 'cursor-pointer' : ''}`}>
+            <div key={index} className={`flex flex-col items-start text-left group hover:scale-[1.02] transition-transform duration-300 ${isOmniInbox || isWhatsappCommerce || isOmniCRM || isSmartKeywordAutomation || isWhatsappCatalogAutomation || isAiAgent ? 'cursor-pointer' : ''}`}>
               <div className="mb-4 bg-gray-50 p-3 rounded-xl">
                 {product.icon}
               </div>
@@ -101,6 +107,26 @@ export default function Products() {
 
           return isOmniInbox ? (
             <Link key={index} to="/products/omni-channel-team-inbox" className="no-underline">
+              {cardContent}
+            </Link>
+          ) : isWhatsappCommerce ? (
+            <Link key={index} to="/products/whatsapp-commerce" className="no-underline">
+              {cardContent}
+            </Link>
+          ) : isOmniCRM ? (
+            <Link key={index} to="/products/omni-channel-crm" className="no-underline">
+              {cardContent}
+            </Link>
+          ) : isSmartKeywordAutomation ? (
+            <Link key={index} to="/products/smart-keyword-automation" className="no-underline">
+              {cardContent}
+            </Link>
+          ) : isWhatsappCatalogAutomation ? (
+            <Link key={index} to="/products/whatsapp-catalog-automation" className="no-underline">
+              {cardContent}
+            </Link>
+          ) : isAiAgent ? (
+            <Link key={index} to="/products/ai-agent" className="no-underline">
               {cardContent}
             </Link>
           ) : (

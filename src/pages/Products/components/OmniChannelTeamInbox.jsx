@@ -119,11 +119,26 @@ const faqs = [
     q: 'What Is An Omni-Channel Team Inbox?',
     a: 'An Omni-Channel Team Inbox is a centralized platform that allows teams to receive, manage, and respond to customer messages from multiple communication channels (e.g., email, live chat, social media, SMS, WhatsApp, and voice) in one unified dashboard.',
   },
-  { q: 'What Channels Are Supported?', a: '' },
-  { q: 'How Is It Different From A Traditional Shared Inbox?', a: '' },
-  { q: 'Can Multiple Team Members Respond To The Same Conversation?', a: '' },
-  { q: 'Can We Assign Messages To Specific Team Members Or Departments?', a: '' },
-  { q: 'Does It Support Automation And Bots?', a: '' },
+  {
+    q: 'What Channels Are Supported?',
+    a: 'Commonly supported channels include: Email (Gmail, Outlook) Website live chat Facebook Messenger & Instagram DM Twitter/X WhatsApp Business SMS VoIP or phone systems App-based chat (mobile or web) Note: Supported channels may vary by provider.'
+  },
+  {
+    q: 'How Is It Different From A Traditional Shared Inbox?',
+    a: 'Unlike a basic shared email inbox, an Omni-Channel Team Inbox: Combines multiple channels, not just email Offers smart routing and automation Provides customer profiles and chat history Allows team collaboration through tagging, assigning, and notes Includes analytics and reporting'
+  },
+  {
+    q: 'Can Multiple Team Members Respond To The Same Conversation?',
+    a: 'Yes, multiple agents can access and collaborate on the same conversation. To prevent duplicated responses, features like real-time typing indicators, internal notes, and collision detection are often available.'
+  },
+  {
+    q: 'Can We Assign Messages To Specific Team Members Or Departments?',
+    a: 'Absolutely. Most Omni-Channel Inboxes include: Manual or auto-assignment Department/team-level inboxes Round-robin or skill-based routing'
+  },
+  {
+    q: 'Does It Support Automation And Bots?',
+    a: 'Yes. Most solutions support: Auto-replies Canned responses Workflow automation (e.g., auto-tagging, forwarding) Chatbots for FAQs or lead qualification AI-assisted response suggestions'
+  },
 ];
 
 const trustLogos = [
@@ -137,12 +152,12 @@ const trustLogos = [
 
 /* ─────────────── Social Orbit Diagram ─────────────── */
 const socialNodes = [
-  { icon: <FaFacebook size={28} />, label: 'Facebook',  angle: 90  },
-  { icon: <FaFacebookMessenger size={28} />, label: 'Messanger', angle: 30  },
-  { icon: <FaTwitter size={28} />, label: 'Twitter',   angle: 330 },
-  { icon: <FaGlobe size={28} />, label: 'Web',       angle: 270 },
+  { icon: <FaFacebook size={28} />, label: 'Facebook', angle: 90 },
+  { icon: <FaFacebookMessenger size={28} />, label: 'Messanger', angle: 30 },
+  { icon: <FaTwitter size={28} />, label: 'Twitter', angle: 330 },
+  { icon: <FaGlobe size={28} />, label: 'Web', angle: 270 },
   { icon: <FaLinkedin size={28} />, label: 'Linked In', angle: 210 },
-  { icon: <FaCalendarAlt size={28} />, label: 'Calender',  angle: 150 },
+  { icon: <FaCalendarAlt size={28} />, label: 'Calender', angle: 150 },
 ];
 
 function SocialOrbit() {
@@ -311,11 +326,11 @@ export default function OmniChannelTeamInbox() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
               Purpose Of An Omni-<br />Channel Inbox
             </h2>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-5">
               {purposeItems.map((item, i) => (
                 <div
                   key={i}
-                  className="bg-[#01ab4a] text-white text-[15px] font-medium px-6 py-4 rounded-md"
+                  className="bg-[#01ab4a] text-white text-[17px] font-semibold px-8 py-7 rounded-lg w-full"
                 >
                   {item}
                 </div>

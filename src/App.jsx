@@ -10,7 +10,7 @@ import AboutUs from './pages/AboutUs/AboutUs'
 import Products from './pages/Products/Products'
 import Blogs from './pages/Blogs/Blogs'
 import ContactUs from './pages/ContactUs/ContactUs'
-import OmniChannelTeamInboxPage from './pages/Products/ProductsPage'
+import ProductsPage from './pages/Products/ProductsPage'
 
 function App() {
   return (
@@ -21,17 +21,17 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/*" element={<ProductsPage />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route path="/products/omni-channel-team-inbox" element={<OmniChannelTeamInboxPage />} />
         </Routes>
       </main>
       <Footer />
-      
+
       {/* Floating Action Buttons */}
       <div className="fixed bottom-6 left-6 flex flex-col gap-3 z-50">
-        <a 
-          href="tel:+918921675767" 
+        <a
+          href="tel:+918921675767"
           className="bg-[#03e78b] hover:bg-green-600 text-white p-3.5 rounded-full shadow-lg shadow-green-500/30 transition-transform hover:scale-110 flex items-center justify-center group relative"
           aria-label="Call Us"
         >
@@ -40,9 +40,9 @@ function App() {
             Call Us
           </span>
         </a>
-        <a 
-          href="https://wa.me/918921675767" 
-          target="_blank" 
+        <a
+          href="https://wa.me/918921675767"
+          target="_blank"
           rel="noopener noreferrer"
           className="bg-[#25D366] hover:bg-[#128C7E] text-white p-3.5 rounded-full shadow-lg shadow-[#25D366]/30 transition-transform hover:scale-110 flex items-center justify-center group relative"
           aria-label="WhatsApp Us"
