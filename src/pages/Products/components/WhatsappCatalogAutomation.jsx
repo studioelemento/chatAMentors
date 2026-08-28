@@ -157,27 +157,27 @@ const whyChoosePoints = [
 const faqs = [
     {
         q: 'What is WhatsApp Catalog Automation?',
-        a: 'With ChatMentorz WhatsApp Catalog Automation, you can manage products, showcase offerings, and automate sales directly inside WhatsApp without needing a mobile app or eCommerce website.',
+        a: 'WhatsApp Catalog Automation allows businesses to automatically share, update, and manage product listings through WhatsApp chats using AI chatbots or CRM triggers. Customers can view products, prices, images, and descriptions without leaving the app.',
     },
     {
         q: 'How does WhatsApp Catalog Automation work?',
-        a: 'Shoppers explore your catalog, select items, and check out seamlessly within the WhatsApp chat interface or via automated AI agent flows.',
+        a: 'It works by integrating your product catalog with a chatbot or automation system. Based on user inputs (keywords, buttons, or menu selections), the bot automatically: Sends product listings Recommends items Shares product cards Provides links to the checkout or website.',
     },
     {
         q: 'How is it different from a traditional shared inbox?',
-        a: 'Traditional shared inboxes focus only on conversation management, whereas Catalog Automation connects live inventory, product catalogs, and automated ordering for end-to-end sales.',
+        a: 'Yes, in most cases. Catalog automation typically requires the WhatsApp Business API, which supports structured messaging formats like Multi-Product Messages (MPM) and Single Product Messages (SPM).',
     },
     {
         q: 'What types of products can I showcase?',
-        a: 'You can showcase any physical or digital goods including retail fashion, restaurant menus, groceries, electronics, jewelry, and specialized services.',
+        a: 'You can list: Physical goods (e.g., clothing, electronics) Digital products (e.g., e-books, courses) Services (e.g., salon, appointments, consulting) As long as they comply with WhatsApp’s Commerce Policy.',
     },
     {
         q: 'Can customers place orders directly from the catalog?',
-        a: 'Yes! Customers can select items, add them to their in-chat cart, and submit their orders or process payment directly inside WhatsApp.',
+        a: 'Customers can browse products and send inquiries or orders via chat. Full checkout and payment typically require: A connected eCommerce site A payment integration (e.g., Razorpay, Stripe, or native WhatsApp Pay in supported regions)',
     },
     {
         q: 'Can I automate product recommendations?',
-        a: 'Yes, you can configure AI workflows to recommend complementary items or alternative products automatically based on customer inputs.',
+        a: 'Yes. Using chat automation, you can: Recommend products based on keywords or preferences Create guided product flows (e.g., select category → view items) Trigger recommendations via customer behavior or responses',
     },
 ];
 
@@ -316,7 +316,7 @@ export default function WhatsappCatalogAutomation() {
             <section className="bg-white py-20 px-6 lg:px-16 border-t border-gray-100">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">Capabilities</p>
+                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">How it works</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                             Why WhatsApp Catalog Automation?
                         </h2>
@@ -348,7 +348,6 @@ export default function WhatsappCatalogAutomation() {
                     </div>
                     {/* Right: Title + Green Feature Cards */}
                     <div className="flex-1">
-                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">Use Cases</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                             The Perfect Fit for Any Business<br />Selling Products
                         </h2>

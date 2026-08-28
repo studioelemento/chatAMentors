@@ -143,27 +143,27 @@ const whyChoosePoints = [
 const faqs = [
     {
         q: 'What is ChatMentorz Omnichannel CRM?',
-        a: 'It is a unified pipeline that brings together all your customer interactions, powered by AI and intelligent chatbots. From WhatsApp to Instagram, Facebook, Telegram, and your Website — everything is streamlined into one powerful system.',
+        a: 'ChatMentorzis an AI-powered omnichannel CRM platform that unifies customer conversations across messaging channels like WhatsApp, Facebook, Instagram, LINE, WeChat, and web chat. It helps businesses manage customer support, marketing campaigns, and sales activities from a single dashboard.',
     },
     {
         q: 'Who is ChatMentorz designed for?',
-        a: 'From SMBs to large enterprises, it scales with your team and customer volume. Businesses from retail to healthcare and luxury goods use ChatMentorz to boost conversions and reduce support costs.',
+        a: 'It’s ideal for retailers, eCommerce brands, service providers, and enterprises looking to streamline customer communication, automate workflows, and increase conversion rates through messaging platforms.',
     },
     {
         q: 'Which messaging channels does ChatMentorz support?',
-        a: 'We support all major messaging channels including WhatsApp, Facebook Messenger, Instagram, Telegram, LINE, WeChat, and Web Chat.',
+        a: 'ChatMentorz supports: WhatsApp Business API Facebook Messenger Instagram Direct LINE WeChat Website Live Chat',
     },
     {
         q: 'Can I respond to all channels from one place?',
-        a: 'Yes, our Omnichannel Messaging Hub allows you to engage with customers across all popular chat platforms from one centralized dashboard.',
+        a: 'Yes, ChatMentorz consolidates all customer conversations into a single, unified inbox for seamless management and faster response times.',
     },
     {
         q: 'Does ChatMentorz offer chatbots?',
-        a: 'Yes, we provide AI-Powered Chatbots that can be deployed for 24/7 customer support, lead qualification, product recommendations, and booking assistance.',
+        a: 'Yes. ChatMentorz includes AI-driven chatbots that can: Answer FAQs Recommend products Automate bookings Route queries to human agents Trigger responses based on keywords or behaviors.',
     },
     {
         q: 'Can I create custom AI agents?',
-        a: 'Absolutely! You can deploy role-specific bots including Smart Shopping Agents, Loyalty Agents, and Customer Service Bots tailored to your business goals.',
+        a: 'Absolutely. You can deploy custom AI agents for specific use cases like customer service, loyalty, booking, marketing campaigns, and more.',
     },
 ];
 

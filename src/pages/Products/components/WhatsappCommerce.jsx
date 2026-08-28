@@ -61,7 +61,6 @@ const IconPromote = () => (
 const setupSteps = [
     {
         icon: <IconStore />,
-        step: 'Step 1',
         title: 'Set Up a WhatsApp Business Account',
         desc: 'Download WhatsApp Business, then create a profile with your company name, logo, description, and contact info.',
         color: 'text-green-600',
@@ -69,7 +68,6 @@ const setupSteps = [
     },
     {
         icon: <IconCatalog />,
-        step: 'Step 2',
         title: 'Create a Product Catalogue',
         desc: 'Use the "Catalogue" feature to upload products, including images, descriptions, prices, and any relevant product details. Organize products into categories if necessary.',
         color: 'text-orange-500',
@@ -77,7 +75,6 @@ const setupSteps = [
     },
     {
         icon: <IconPayment />,
-        step: 'Step 3',
         title: 'Integrate Payment Options',
         desc: 'Enable payment options by integrating with supported payment gateways or linking to payment methods such as bank transfers, PayPal, or local payment solutions.',
         color: 'text-purple-600',
@@ -85,7 +82,6 @@ const setupSteps = [
     },
     {
         icon: <IconAutomate />,
-        step: 'Step 4',
         title: 'Automate Responses',
         desc: 'Set up automated responses to common queries and order confirmations to streamline customer communication.',
         color: 'text-blue-600',
@@ -93,7 +89,6 @@ const setupSteps = [
     },
     {
         icon: <IconPromote />,
-        step: 'Step 5',
         title: 'Promote Your WhatsApp Store',
         desc: 'Share your WhatsApp number on your website, social media platforms, and marketing campaigns to attract customers to your WhatsApp store.',
         color: 'text-pink-600',
@@ -121,13 +116,13 @@ const ecommerceFeatures = [
 ];
 
 const advantages = [
-    { emoji: '🤝', title: 'Direct Interaction with Customers', desc: 'Engage in real-time communication with clients to strengthen bonds and foster trust. Conversions are more likely as a result.' },
+    { emoji: '🤝', title: 'Direct Interaction with Customers', desc: 'Engage in real-time communication with clients to strengthen bonds and foster trust. Conversions are more likely as a result of the direct engagement.' },
     { emoji: '🛒', title: 'Easy Shopping', desc: 'A single app allows users to view, inquire about, and buy products, making the buying process easy and convenient.' },
     { emoji: '💰', title: 'Economical Sales Channel', desc: 'Use WhatsApp as a low-cost sales channel instead of relying on a large e-commerce platform or website.' },
     { emoji: '🎯', title: 'Increased Customization', desc: 'To boost client happiness and loyalty, make tailored product recommendations based on their questions and previous purchases.' },
     { emoji: '🌍', title: 'Greater Reach', desc: "Utilize WhatsApp's enormous user base to connect with more prospective clients, even those who might not use conventional e-commerce sites." },
-    { emoji: '📈', title: 'Greater Rates of Conversion', desc: 'WhatsApp discussions frequently have higher conversion rates because of their ease of use and speed.' },
-    { emoji: '⚡', title: 'Effective Customer Service', desc: 'Quickly and effectively respond to consumer inquiries to enhance the overall customer experience.' },
+    { emoji: '📈', title: 'Greater Rates of Conversion', desc: 'Compared to other online sales platforms, WhatsApp discussions frequently have higher conversion rates because of their ease of use and speed.' },
+    { emoji: '⚡', title: 'Effective Customer Service', desc: 'Quickly and effectively respond to consumer inquiries to enhance the overall customer experience and shorten the time it takes to make a purchase.' },
     { emoji: '💵', title: 'Increases Revenue and Sales', desc: 'Businesses may boost sales and profitability by making the shopping experience more entertaining and accessible.' },
     { emoji: '📦', title: 'Simplified Order Processing', desc: 'The WhatsApp interface streamlines the sales process by allowing you to manage orders and monitor client interactions.' },
 ];
@@ -146,23 +141,23 @@ const faqs = [
     },
     {
         q: 'Do I need a Business Account?',
-        a: 'Yes, you need a WhatsApp Business Account (or WhatsApp Business API for larger scale operations) to set up WhatsApp Commerce and use catalog and payment features.',
+        a: 'Yes, you must use the WhatsApp Business App or the WhatsApp Business Platform (API) to access commerce features.',
     },
     {
         q: 'How do I create a product catalog?',
-        a: 'You can create a product catalog using the WhatsApp Business app\'s built-in "Catalogue" feature, or through the Commerce Manager on Facebook if using the API. Upload product images, names, prices, and descriptions.',
+        a: 'In the WhatsApp Business App: Go to Business Tools > Catalog Tap Add Product/Service Add images, name, price, and description',
     },
     {
         q: 'How many products can I list in my catalog?',
-        a: 'With the WhatsApp Business app, you can list up to 500 products or services in your catalog. If you need more, the WhatsApp Business API supports larger catalogs through third-party integrations.',
+        a: 'You can list up to 500 products or services in your catalog.',
     },
     {
         q: 'Can I integrate WhatsApp Commerce with my online store?',
-        a: 'Yes! ChatMentorz supports integration with popular e-commerce platforms and payment gateways, allowing you to sync your product catalog and manage orders from a centralized dashboard.',
+        a: 'Yes, platforms like Shopify, WooCommerce, and Magento offer WhatsApp integrations. You can sync product catalogs and automate messages.',
     },
     {
         q: 'Are there any product restrictions?',
-        a: "Yes, WhatsApp's Commerce Policy prohibits selling certain products such as alcohol, tobacco, prescription drugs, weapons, adult content, and other restricted items. Always review the policy before listing products.",
+        a: "Yes. WhatsApp prohibits the sale of certain items (e.g., alcohol, tobacco, weapons, and adult content). Refer to the Commerce Policy for full details.",
     },
 ];
 

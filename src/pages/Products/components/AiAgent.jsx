@@ -129,27 +129,27 @@ const whyChoosePoints = [
 const faqs = [
     {
         q: 'What is an AI Agent?',
-        a: 'An AI Agent is an advanced artificial intelligence system that not only answers questions like a traditional chatbot, but can also understand context, perform tasks, and automate workflows autonomously across different platforms.',
+        a: 'An AI Agent is a virtual assistant powered by artificial intelligence that can understand, respond to, and take actions based on customer messages. It mimics human-like conversations and performs tasks such as answering FAQs, recommending products, handling bookings, and routing chats.',
     },
     {
         q: 'How is an AI Agent different from a chatbot?',
-        a: 'While traditional chatbots follow strict, rule-based paths and predefined scripts, AI Agents use machine learning and natural language processing to understand intent, learn from interactions, and handle open-ended conversations naturally.',
+        a: 'Chatbots are often rule-based and respond to specific commands or keywords. AI Agents go further by using Natural Language Processing (NLP) and machine learning to understand context, intent, and sentiment, offering more natural and intelligent conversations.',
     },
     {
         q: 'What can an AI Agent do?',
-        a: 'AI Agents can automate repetitive workflows, reply to customer inquiries instantly, generate lead summaries, offer smart product recommendations, fix spelling/grammar, and integrate seamlessly with your human team.',
+        a: 'Common capabilities include: Answering FAQs Recommending products/services Booking appointments Collecting customer data Routing conversations to human agents Running surveys or feedback forms Triggering workflows or automations in the CRM',
     },
     {
         q: 'Are AI Agents available 24/7?',
-        a: 'Yes! AI Agents do not require breaks or sleep. They provide instant, round-the-clock support to ensure your customers are always attended to, regardless of the time zone.',
+        a: 'Yes. AI Agents operate 24/7, allowing you to provide instant responses to customers even outside business hours, improving response time and customer satisfaction.',
     },
     {
         q: 'Can I customize the AI Agent for my business needs?',
-        a: 'Absolutely. AI Agents can be tailored to match your brand\'s voice, integrated with your specific workflows, and trained on your unique products and FAQs.',
+        a: 'Absolutely. You can configure: Custom responses Business-specific workflows Multi-language support Product catalogs Integration with your backend systems (CRM, ERP, etc.)',
     },
     {
         q: 'Can the AI Agent escalate to a human agent?',
-        a: 'Yes, if an AI Agent encounters a highly complex query or an issue requiring human empathy, it can seamlessly hand over the entire context and conversation history to a human support agent.',
+        a: 'Yes. If the AI cannot resolve an issue or detects complex intent, it can automatically escalate the conversation to a live agent with full context.',
     },
 ];
 
@@ -288,7 +288,7 @@ export default function AiAgent() {
             <section className="bg-white py-20 px-6 lg:px-16 border-t border-gray-100">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">Capabilities</p>
+                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">How It's Work</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                             What AI Mate Can Do
                         </h2>
@@ -320,14 +320,13 @@ export default function AiAgent() {
                     </div>
                     {/* Right: Title + Green Feature Cards */}
                     <div className="flex-1">
-                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">Features</p>
+
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                             Available Actions & Prompts
                         </h2>
                         <div className="flex flex-col gap-4">
                             {availableActions.map((item, i) => (
                                 <div key={i} className="bg-[#01ab4a] text-white px-8 py-5 rounded-lg w-full shadow-sm flex items-center gap-4">
-                                    <span className="text-xl">✨</span>
                                     <h4 className="text-[17px] font-semibold m-0">{item.title}</h4>
                                 </div>
                             ))}

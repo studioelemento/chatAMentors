@@ -120,28 +120,23 @@ const omnichannelCards = [
 const benefits = [
     {
         emoji: '⚡',
-        title: '24/7 Instant Response',
-        desc: '24/7 instant response across all digital messaging platforms without delays.',
+        title: '24/7 Instant Response Across All Platforms',
     },
     {
         emoji: '🎯',
-        title: 'Zero Missed Inquiries',
-        desc: 'Zero missed inquiries leading directly to higher lead capture and user retention.',
+        title: 'Zero Missed Inquiries → Higher Lead Capture',
     },
     {
         emoji: '💬',
-        title: 'Personalized Communication',
-        desc: 'Personalized and consistent brand communication tailored to customer queries.',
+        title: 'Personalized And Consistent Brand Communication',
     },
     {
         emoji: '📉',
-        title: 'Reduced Support Workload',
-        desc: 'Significantly reduced workload for customer support and sales teams.',
+        title: 'Reduced Workload For Customer Support Teams',
     },
     {
         emoji: '📈',
-        title: 'Higher Conversion Rates',
-        desc: 'Increased conversions and sales through faster automated responses.',
+        title: 'Increased Conversions Through Faster Replies',
     },
 ];
 
@@ -154,27 +149,27 @@ const whyChoosePoints = [
 const faqs = [
     {
         q: 'What is Smart Keyword Automation?',
-        a: 'Smart Keyword Automation enables businesses to deliver instant and personalized customer experiences across all major digital channels. Setting up simple keyword-based triggers allows you to automate conversations, capture leads, and close sales 24/7.',
+        a: 'Smart Keyword Automation is a feature that automatically triggers specific actions—such as sending a message, assigning a tag, routing a chat, or launching a workflow—based on keywords typed by the user during a conversation.',
     },
     {
         q: 'How does it work?',
-        a: 'When a customer types a specific keyword (e.g. "price", "demo", "buy"), the system automatically detects it and triggers the appropriate pre-configured response, form, or workflow.',
+        a: 'The system scans incoming messages for predefined keywords or phrases. When a match is found, it automatically: Sends a relevant reply Triggers a chatbot flow Assigns the chat to a specific team or agent Applies tags or labels Starts a campaign or sequence',
     },
     {
         q: 'What are some examples of keywords?',
-        a: 'Common keywords include "price", "cost", "catalog", "refund", "support", "appointment", and "offer". You can set up custom triggers for any term relevant to your business.',
+        a: 'Examples of keywords and responses: “Price” → Sends product pricing details “Order status” → Launches order tracking workflow “Support” → Routes to a live agent “Book appointment” → Triggers scheduling form',
     },
     {
         q: 'Can I use multiple keywords for one trigger?',
-        a: 'Yes, ChatMentorz supports multi-keyword triggers and synonyms so different customer expressions for the same intent (e.g., "cost", "price", "how much") all trigger the same response.',
+        a: 'Yes. You can define multiple keywords (e.g., “price”, “cost”, “how much”) to trigger the same response or workflow, making the automation more flexible.',
     },
     {
         q: 'Can I add synonyms or keyword variations?',
-        a: 'Yes! You can add unlimited variations and synonyms for each trigger rule to ensure high response accuracy regardless of how the customer phrases their question.',
+        a: 'Absolutely. You can use synonyms, variations, or common typos to ensure better recognition and automation accuracy.',
     },
     {
         q: 'Can keywords trigger different workflows in different channels?',
-        a: 'Yes, keyword triggers can work independently across channels so you can customize specific responses for WhatsApp, Instagram DMs, Facebook Messenger, or Web Chat.',
+        a: 'Yes. In most omnichannel CRMs (like Chatmentorz), keyword triggers can be set per channel (WhatsApp, Instagram, Web Chat, etc.), allowing contextual responses.',
     },
 ];
 
@@ -351,9 +346,6 @@ export default function SmartKeywordAutomation() {
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
                             Omnichannel Keyword<br />Automation
                         </h2>
-                        <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
-                            Deliver unified, automated customer experiences across your favorite social and messaging platforms.
-                        </p>
                         <div className="flex flex-col gap-5">
                             {omnichannelCards.map((item, i) => (
                                 <div key={i} className="bg-[#01ab4a] text-white px-8 py-6 rounded-lg w-full shadow-sm">
@@ -370,7 +362,7 @@ export default function SmartKeywordAutomation() {
             <section className="bg-white py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">Benefits</p>
+                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">Key Benefits</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                             Benefits Of Using An Smart Keyword Automation
                         </h2>

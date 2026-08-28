@@ -277,6 +277,16 @@ export default function OmniChannelTeamInbox() {
           />
         </div>
       </section>
+      {/* ── Trust Logos Strip ── */}
+      <section className="bg-[#e8f0e8] py-10 px-6">
+        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-8">
+          {trustLogos.map((logo, i) => (
+            <div key={i} className="bg-white rounded-xl shadow-sm p-3 flex items-center justify-center w-[130px] h-[80px]">
+              <img src={logo.src} alt={logo.alt} className="max-h-[56px] max-w-[110px] object-contain" />
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* ── Key Features ── */}
       <section className="bg-white py-20 px-6 lg:px-16">
@@ -296,17 +306,6 @@ export default function OmniChannelTeamInbox() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── Trust Logos Strip ── */}
-      <section className="bg-[#e8f0e8] py-10 px-6">
-        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-8">
-          {trustLogos.map((logo, i) => (
-            <div key={i} className="bg-white rounded-xl shadow-sm p-3 flex items-center justify-center w-[130px] h-[80px]">
-              <img src={logo.src} alt={logo.alt} className="max-h-[56px] max-w-[110px] object-contain" />
-            </div>
-          ))}
         </div>
       </section>
 
