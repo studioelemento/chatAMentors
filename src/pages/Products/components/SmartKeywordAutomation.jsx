@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import TrustLogos from './TrustLogos';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
 import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaCalendarAlt, FaSkype } from 'react-icons/fa';
 import bgImage from '../../../assets/img-Home/chat-bot-service-concept-enhancing-customer-experience-with-virtual-assistant-1.png';
@@ -173,15 +174,6 @@ const faqs = [
     },
 ];
 
-const trustLogos = [
-    { src: logo1, alt: 'Chatmentorz' },
-    { src: logo1, alt: 'Tripco' },
-    { src: logo1, alt: 'Whitetrip' },
-    { src: logo1, alt: 'Evergreen Village' },
-    { src: logo1, alt: 'Jetiaayu' },
-    { src: logo1, alt: 'Mercedes' },
-];
-
 /* ─────────────── Social Orbit Diagram ─────────────── */
 const socialNodes = [
     { icon: <FaFacebook size={28} />, label: 'facebook', angle: 90 },
@@ -290,19 +282,8 @@ export default function SmartKeywordAutomation() {
                 </div>
             </section>
 
-{/* ── 3. Client Logos Strip ── */}
-            <section className="bg-[#edf4ed] py-10 px-6">
-                <div className="max-w-6xl mx-auto flex flex-col items-center">
-                    <p className="text-gray-600 font-medium mb-6 uppercase tracking-wider text-xs">Trusted by leading brands worldwide</p>
-                    <div className="flex flex-wrap items-center justify-center gap-8">
-                        {trustLogos.map((logo, i) => (
-                            <div key={i} className="bg-white rounded-xl shadow-sm p-3 flex items-center justify-center w-[130px] h-[80px]">
-                                <img src={logo.src} alt={logo.alt} className="max-h-[56px] max-w-[110px] object-contain" />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            {/* ── 3. Client Logos Strip ── */}
+            <TrustLogos />
 
             {/* ── 4. Key Features Section (3-Column Grid) ── */}
             <section className="bg-white py-20 px-6 lg:px-16 border-t border-gray-100">

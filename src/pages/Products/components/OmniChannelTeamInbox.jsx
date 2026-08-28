@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import TrustLogos from './TrustLogos';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
 import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaGlobe, FaCalendarAlt } from 'react-icons/fa';
 import bgImage from '../../../assets/img-Home/chat-bot-service-concept-enhancing-customer-experience-with-virtual-assistant-1.png';
@@ -141,15 +142,6 @@ const faqs = [
   },
 ];
 
-const trustLogos = [
-  { src: logo1, alt: 'Chatmentorz' },
-  { src: logo1, alt: 'Tripco' },
-  { src: logo1, alt: 'Whitetrip' },
-  { src: logo1, alt: 'Evergreen Village' },
-  { src: logo1, alt: 'Jetiaayu' },
-  { src: logo1, alt: 'Mercedes' },
-];
-
 /* ─────────────── Social Orbit Diagram ─────────────── */
 const socialNodes = [
   { icon: <FaFacebook size={28} />, label: 'Facebook', angle: 90 },
@@ -278,15 +270,7 @@ export default function OmniChannelTeamInbox() {
         </div>
       </section>
       {/* ── Trust Logos Strip ── */}
-      <section className="bg-[#e8f0e8] py-10 px-6">
-        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-8">
-          {trustLogos.map((logo, i) => (
-            <div key={i} className="bg-white rounded-xl shadow-sm p-3 flex items-center justify-center w-[130px] h-[80px]">
-              <img src={logo.src} alt={logo.alt} className="max-h-[56px] max-w-[110px] object-contain" />
-            </div>
-          ))}
-        </div>
-      </section>
+      <TrustLogos />
 
       {/* ── Key Features ── */}
       <section className="bg-white py-20 px-6 lg:px-16">

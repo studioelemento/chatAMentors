@@ -2,155 +2,164 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import TrustLogos from './TrustLogos';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
-import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaCalendarAlt, FaGlobe } from 'react-icons/fa';
+import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaGlobe, FaCalendarAlt } from 'react-icons/fa';
 import bgImage from '../../../assets/img-Home/chat-bot-service-concept-enhancing-customer-experience-with-virtual-assistant-1.png';
 import logo1 from '../../../assets/img-Home/Chatmentorz.png';
 
-/* ─────────────── Inline SVG Icons for Features ─────────────── */
-const IconAutomate = () => (
+/* ─────────────── Inline SVG Icons for Solutions ─────────────── */
+const IconFacebook = () => (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <rect x="14" y="22" width="36" height="28" rx="4" />
-        <circle cx="24" cy="34" r="4" />
-        <circle cx="40" cy="34" r="4" />
-        <line x1="28" y1="44" x2="36" y2="44" />
-        <line x1="32" y1="10" x2="32" y2="22" />
-        <circle cx="32" cy="8" r="4" />
+        <rect x="10" y="6" width="44" height="52" rx="6" />
+        <path d="M36 58 V38 H42 L44 30 H36 V26 C36 23 37 22 40 22 H44 V14 H38 C30 14 28 19 28 26 V30 H22 L22 38 H28 V58" />
     </svg>
 );
 
-const IconTeam = () => (
+const IconInstagram = () => (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <circle cx="32" cy="24" r="8" />
-        <path d="M16 56 C16 40 48 40 48 56" />
-        <circle cx="16" cy="32" r="6" />
-        <path d="M4 56 C4 46 20 46 24 50" />
-        <circle cx="48" cy="32" r="6" />
-        <path d="M60 56 C60 46 44 46 40 50" />
+        <rect x="8" y="8" width="48" height="48" rx="12" />
+        <circle cx="32" cy="32" r="12" />
+        <circle cx="46" cy="18" r="3" fill="currentColor" />
     </svg>
 );
 
-const IconInsights = () => (
+const IconWhatsapp = () => (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <path d="M8 56 L56 56" />
-        <path d="M16 56 L16 32 M32 56 L32 16 M48 56 L48 40" />
-        <path d="M8 40 L24 24 L40 32 L56 8" />
+        <path d="M32 6 C18 6 6 18 6 32 C6 37 7.5 42 10 46 L6 58 L18 54 C22 56.5 27 58 32 58 C46 58 58 46 58 32 C58 18 46 6 32 6Z" />
+        <path d="M24 20 C24 20 22 20 22 24 C22 28 26 34 30 38 C34 42 40 44 42 44 C44 44 46 42 46 40 L44 36 L40 38 C40 38 36 34 34 30 C32 26 36 26 36 24 L34 20 Z" />
     </svg>
 );
 
-const IconContext = () => (
+const IconTelegram = () => (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <path d="M12 18 C12 14 16 10 24 10 H40 C48 10 52 14 52 18 V34 C52 38 48 42 40 42 H26 L14 52 V42 C12 40 12 36 12 34 Z" />
-        <circle cx="24" cy="26" r="3" fill="currentColor" />
-        <circle cx="32" cy="26" r="3" fill="currentColor" />
-        <circle cx="40" cy="26" r="3" fill="currentColor" />
+        <circle cx="32" cy="32" r="26" />
+        <path d="M16 32 L46 20 L38 48 L30 36 Z" />
+        <line x1="30" y1="36" x2="46" y2="20" />
+    </svg>
+);
+
+const IconWebsite = () => (
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
+        <rect x="6" y="10" width="52" height="40" rx="4" />
+        <line x1="6" y1="20" x2="58" y2="20" />
+        <circle cx="12" cy="15" r="2" fill="currentColor" />
+        <circle cx="18" cy="15" r="2" fill="currentColor" />
+        <circle cx="24" cy="15" r="2" fill="currentColor" />
+        <line x1="20" y1="30" x2="44" y2="30" />
+        <line x1="20" y1="38" x2="38" y2="38" />
     </svg>
 );
 
 /* ─────────────── Data ─────────────── */
-const whatAiMateCanDo = [
+const omniSolutions = [
     {
-        icon: <IconAutomate />,
-        title: 'Automate Repetitive Workflows',
-        desc: 'Delegate routine tasks like replying to FAQs, lead qualification, and follow-ups. Free up your team to focus on high-value activities.',
+        icon: <IconFacebook />,
+        title: 'Facebook Automation',
+        desc: 'Automate Messenger replies and comment responses. Share product catalogs, offers, or booking links instantly. Never miss a lead from your Facebook audience.',
         color: 'text-blue-600',
         bg: 'bg-blue-50',
     },
     {
-        icon: <IconTeam />,
-        title: 'Seamless Team Collaboration',
-        desc: 'AI Mate works alongside your sales, support, and marketing teams. Assigns leads, prioritizes tickets, and ensures nothing slips through the cracks.',
+        icon: <IconInstagram />,
+        title: 'Instagram Automation',
+        desc: 'Auto-respond to story mentions, comments, and DMs. Deliver offers, product details, and campaigns instantly. Engage your followers with interactive chat flows.',
+        color: 'text-pink-600',
+        bg: 'bg-pink-50',
+    },
+    {
+        icon: <IconWhatsapp />,
+        title: 'WhatsApp Automation',
+        desc: 'Provide instant support, order updates, and personalized messages. Automate FAQs, appointment bookings, and payment links. Build stronger customer relationships with the official WhatsApp API.',
         color: 'text-green-600',
         bg: 'bg-green-50',
     },
     {
-        icon: <IconInsights />,
-        title: 'Smart Insights & Reporting',
-        desc: 'Track performance, spot trends, and get actionable insights. Make data-driven decisions faster with AI-powered dashboards.',
+        icon: <IconTelegram />,
+        title: 'Telegram Automation',
+        desc: 'Launch interactive Telegram bots without coding. Automate group or channel responses and customer support. Reach a growing audience of Telegram users seamlessly.',
+        color: 'text-sky-500',
+        bg: 'bg-sky-50',
+    },
+    {
+        icon: <IconWebsite />,
+        title: 'Website Automation',
+        desc: 'Add a smart chatbot to your website to answer queries 24/7. Capture leads, provide instant support, and route visitors to the right information. Turn website traffic into qualified customers.',
         color: 'text-purple-600',
         bg: 'bg-purple-50',
     },
-    {
-        icon: <IconContext />,
-        title: 'Context-Aware Conversations',
-        desc: 'Understands customer queries and responds intelligently. Provides personalized experiences across WhatsApp, Instagram, Facebook, Telegram, and Websites.',
-        color: 'text-orange-500',
-        bg: 'bg-orange-50',
-    }
 ];
 
-const availableActions = [
-    { title: 'Summarise Conversations in Teambox' },
-    { title: 'Generate Replies' },
-    { title: 'Improve & Rephrase' },
-    { title: 'Make it Shorter' },
-    { title: 'Fix Spelling & Grammar' },
+const whatIsOmniChannel = [
+    { title: 'Interact with customers wherever they are (email, SMS, social media, chat, phone, in-store, etc.)' },
+    { title: 'Keep communication unified and contextual' },
+    { title: 'Reduce manual intervention' },
+    { title: 'Boost efficiency and personalization' },
 ];
 
 const benefits = [
     {
-        emoji: '🕒',
-        title: '24/7 Instant Customer Support',
-        desc: 'AI Agents are always available — day or night — to answer customer queries instantly. Reduces wait times, boosts responsiveness, and improves customer satisfaction.',
+        emoji: '🤝',
+        title: 'Seamless Customer Experience',
+        desc: 'Customers can switch between channels without repeating themselves. Automation ensures all channels are synchronized, maintaining context and history. Example: A customer starts a support request via chatbot and finishes it via phone without losing information.',
     },
     {
         emoji: '⚡',
-        title: 'Faster Response & Resolution Times',
-        desc: 'Handles routine and repetitive inquiries (e.g., order status, pricing, FAQs) within seconds. Frees up human agents to focus on complex or high-value conversations.',
-    },
-    {
-        emoji: '✨',
-        title: 'Consistent, Error-Free Communication',
-        desc: 'Delivers standardized responses across all channels — WhatsApp, web chat, social media, etc. Minimizes human errors and maintains brand tone and accuracy.',
+        title: 'Faster Response Times',
+        desc: 'Chatbots, autoresponders, and smart routing reduce wait times. Automated workflows can instantly process inquiries, orders, or support tickets. Benefit: Higher customer satisfaction and fewer abandoned carts or unresolved issues.',
     },
     {
         emoji: '💰',
-        title: 'Cost Efficiency',
-        desc: 'Reduces the need for a large support team by automating 60–80% of customer interactions. Lowers operational costs while scaling support for growing customer bases.',
+        title: 'Lower Operational Costs',
+        desc: 'Reduces the need for large support or sales teams. Automation handles routine queries, follow-ups, reminders, and transactions at scale. Cost savings can be reinvested in higher-value services or marketing.',
     },
     {
-        emoji: '📈',
-        title: 'Drives Sales Through Smart Recommendations',
-        desc: 'AI Agents can act as virtual shopping assistants, guiding users to relevant products, promotions, or services based on preferences and behavior. Increases conversion rates and average order value.',
+        emoji: '🎯',
+        title: 'Personalization at Scale',
+        desc: 'Automation tools use customer data to personalize messages, offers, and support. Every interaction feels custom, even though it\'s automated. Example: "Hi John, your order #12345 has been shipped" vs. generic updates.',
     },
     {
-        emoji: '🧠',
-        title: 'Intelligent Learning & Adaptation',
-        desc: 'Uses Natural Language Processing (NLP) and machine learning to understand customer intent, context, and sentiment. Improves over time based on real interactions and training.',
+        emoji: '📊',
+        title: 'Better Data Collection and Insights',
+        desc: 'Centralized tracking across all channels gives you a 360° view of customer behavior. Analytics help identify trends, pain points, and opportunities for growth. Enables smarter decision-making based on real-time customer data.',
+    },
+    {
+        emoji: '✨',
+        title: 'Consistent Messaging and Branding',
+        desc: 'Automated templates and workflows ensure uniform messaging across platforms. Reduces human error and brand inconsistency. Important for maintaining trust and professionalism across touchpoints.',
     },
 ];
 
 const whyChoosePoints = [
-    '10x productivity boost for your team',
-    'Always-on, AI-driven customer engagement',
-    'Deep integration with Chatmentorz ecosystem',
-    'Reduces manual effort & accelerates growth',
-    'Scales effortlessly with your business'
+    'One dashboard for all channels',
+    'Drag-and-drop no-code chatbot builder',
+    '24/7 instant replies and lead capture',
+    'Seamless customer experience across platforms',
+    'Trusted by 1,000+ businesses worldwide',
 ];
 
 const faqs = [
     {
-        q: 'What is an AI Agent?',
-        a: 'An AI Agent is a virtual assistant powered by artificial intelligence that can understand, respond to, and take actions based on customer messages. It mimics human-like conversations and performs tasks such as answering FAQs, recommending products, handling bookings, and routing chats.',
+        q: 'What is Omni-Channel Automation?',
+        a: 'Omni-channel automation is the use of automated tools and systems to deliver a consistent and connected customer experience across multiple communication channels—such as email, SMS, chat, social media, phone, and in-store—while keeping all interactions synced and contextual.',
     },
     {
-        q: 'How is an AI Agent different from a chatbot?',
-        a: 'Chatbots are often rule-based and respond to specific commands or keywords. AI Agents go further by using Natural Language Processing (NLP) and machine learning to understand context, intent, and sentiment, offering more natural and intelligent conversations.',
+        q: 'How is omni-channel different from multi-channel?',
+        a: 'Multi-channel means offering multiple ways to interact (e.g., phone, email, chat), but they may not be connected. Omni-channel ensures all channels are integrated, allowing seamless switching and shared context between them.',
     },
     {
-        q: 'What can an AI Agent do?',
-        a: 'Common capabilities include: Answering FAQs Recommending products/services Booking appointments Collecting customer data Routing conversations to human agents Running surveys or feedback forms Triggering workflows or automations in the CRM',
+        q: 'Which channels can be automated in an omni-channel system?',
+        a: 'Most customer-facing and back-office channels can be automated, including: Email SMS Live chat & chatbots Social media (Facebook, WhatsApp, Instagram, etc.) Phone (IVR & voice bots) Push notifications In-store kiosks/POS systems Web personalization',
     },
     {
-        q: 'Are AI Agents available 24/7?',
-        a: 'Yes. AI Agents operate 24/7, allowing you to provide instant responses to customers even outside business hours, improving response time and customer satisfaction.',
+        q: 'What are the main benefits of omni-channel automation?',
+        a: 'Faster response times Improved customer experience Lower operational costs Better personalization Unified data and reporting 24/7 customer engagement Higher customer loyalty and retention',
     },
     {
-        q: 'Can I customize the AI Agent for my business needs?',
-        a: 'Absolutely. You can configure: Custom responses Business-specific workflows Multi-language support Product catalogs Integration with your backend systems (CRM, ERP, etc.)',
+        q: 'What types of businesses need omni-channel automation?',
+        a: 'It benefits most industries, especially: E-commerce & Retail Banking & Finance Healthcare Travel & Hospitality SaaS & Tech Telecom Education Any business with multiple customer touchpoints can benefit.',
     },
     {
-        q: 'Can the AI Agent escalate to a human agent?',
-        a: 'Yes. If the AI cannot resolve an issue or detects complex intent, it can automatically escalate the conversation to a live agent with full context.',
+        q: 'Is it difficult to implement omni-channel automation?',
+        a: 'It depends on the complexity of your current systems. Basic automation can be set up easily with tools like: HubSpot, Zoho, or ActiveCampaign for marketing Zendesk or Freshdesk for customer service Zapier or Make for cross-platform workflows Advanced setups may require technical integration and a clear customer journey strategy.',
     },
 ];
 
@@ -220,43 +229,43 @@ function FAQItem({ q, a, defaultOpen = false }) {
 }
 
 /* ─────────────── Main Component ─────────────── */
-export default function AiAgent() {
+export default function OmniChannelAutomation() {
     return (
         <div className="font-sans">
 
             {/* ── 1. Hero ── */}
             <section className="relative pt-32 pb-40 overflow-hidden flex items-center justify-center bg-gray-100">
                 <div className="absolute inset-0 z-0">
-                    <img src={bgImage} alt="AI Agent Background" className="w-full h-full object-cover object-center opacity-40 blur-[2px]" />
+                    <img src={bgImage} alt="Omni Channel Automation Background" className="w-full h-full object-cover object-center opacity-40 blur-[2px]" />
                     <div className="absolute inset-0 bg-white/40 mix-blend-overlay" />
                 </div>
                 <div className="relative z-10 text-center flex flex-col items-center">
-                    <h1 className="text-5xl md:text-6xl font-bold text-[#1f2937] mb-4">AI AGENT</h1>
+                    <h1 className="text-5xl md:text-6xl font-bold text-[#1f2937] mb-4">Omni Channel Automation</h1>
                     <div className="flex items-center space-x-2 text-[15px] font-medium">
                         <Link to="/" className="flex items-center text-[#1f2937] hover:text-[#01ab4a] transition-colors">
                             <Home size={16} className="mr-1.5 mb-[2px]" />
                             Home
                         </Link>
                         <ChevronRight size={16} className="text-gray-500" />
-                        <span className="text-[#01ab4a]">AI AGENT</span>
+                        <span className="text-[#01ab4a]">Omni Channel Automation</span>
                     </div>
                 </div>
             </section>
 
-            {/* ── 2. Intro Section ── */}
+            {/* ── 2. One Platform. Every Channel. Unlimited Possibilities. ── */}
             <section className="max-w-7xl mx-auto px-6 lg:px-16 py-20 flex flex-col lg:flex-row items-center gap-14 bg-white">
                 <div className="flex-1">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                        Boost Your Team Productivity 10x with AI Mate
+                        One Platform. Every Channel.<br />Unlimited Possibilities.
                     </h2>
                     <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
-                        Meet AI Mate, your smart digital teammate — tightly integrated with the ChatMentorz product ecosystem. From handling customer conversations to automating repetitive tasks, AI Mate works 24/7 to supercharge your business efficiency.
+                        With ChatMentorz's powerful no-code chatbots, you can manage conversations, capture leads, and drive sales across all your digital channels — all from a single platform. Stay connected with your customers wherever they are, without writing a single line of code.
                     </p>
                 </div>
                 <div className="flex-1 flex justify-center">
                     <img
                         src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&q=80"
-                        alt="AI Agent Interface Mockup"
+                        alt="Omni Channel Platform"
                         className="w-full max-w-[500px] object-cover rounded-xl shadow-lg"
                     />
                 </div>
@@ -265,17 +274,30 @@ export default function AiAgent() {
             {/* ── 3. Client Logos Strip ── */}
             <TrustLogos />
 
-            {/* ── 4. What AI Mate Can Do (Grid) ── */}
+            {/* ── 4. Our Omni Channel Solutions (Grid) ── */}
             <section className="bg-white py-20 px-6 lg:px-16 border-t border-gray-100">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">How It's Work</p>
+                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">How it's work</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            What AI Mate Can Do
+                            Our Omni Channel Solutions
                         </h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {whatAiMateCanDo.map((s, i) => (
+                    {/* Row 1: 3 cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                        {omniSolutions.slice(0, 3).map((s, i) => (
+                            <div key={i} className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center border border-gray-100 hover:shadow-lg transition-shadow">
+                                <div className={`w-20 h-20 rounded-full ${s.bg} flex items-center justify-center ${s.color} mb-5`}>
+                                    {s.icon}
+                                </div>
+                                <h3 className="text-[17px] font-bold text-gray-900 mb-3">{s.title}</h3>
+                                <p className="text-gray-400 text-[14px] leading-relaxed">{s.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                    {/* Row 2: 2 cards centered */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                        {omniSolutions.slice(3).map((s, i) => (
                             <div key={i} className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center border border-gray-100 hover:shadow-lg transition-shadow">
                                 <div className={`w-20 h-20 rounded-full ${s.bg} flex items-center justify-center ${s.color} mb-5`}>
                                     {s.icon}
@@ -288,27 +310,29 @@ export default function AiAgent() {
                 </div>
             </section>
 
-            {/* ── 5. Available Actions & Prompts (2-Column with Green Cards) ── */}
+            {/* ── 5. What Is Omni-Channel Automation? (2-Column with Green Cards) ── */}
             <section className="bg-[#edf4ed] py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
                     {/* Left: Illustration */}
                     <div className="flex-1 flex justify-center">
                         <img
                             src="https://images.unsplash.com/photo-1655393001768-d946c998b49f?w=500&q=80"
-                            alt="Available Actions and Prompts"
+                            alt="Omni-Channel Automation Illustration"
                             className="w-full max-w-[450px] rounded-xl object-cover shadow-md"
                         />
                     </div>
                     {/* Right: Title + Green Feature Cards */}
                     <div className="flex-1">
-
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                            Available Actions & Prompts
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                            What Is Omni-Channel<br />Automation?
                         </h2>
+                        <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
+                            It's the strategy and implementation of automation tools to:
+                        </p>
                         <div className="flex flex-col gap-4">
-                            {availableActions.map((item, i) => (
+                            {whatIsOmniChannel.map((item, i) => (
                                 <div key={i} className="bg-[#01ab4a] text-white px-8 py-5 rounded-lg w-full shadow-sm flex items-center gap-4">
-                                    <h4 className="text-[17px] font-semibold m-0">{item.title}</h4>
+                                    <h4 className="text-[15px] font-semibold m-0">{item.title}</h4>
                                 </div>
                             ))}
                         </div>
@@ -316,13 +340,13 @@ export default function AiAgent() {
                 </div>
             </section>
 
-            {/* ── 6. Benefits of Using an AI Agent ── */}
+            {/* ── 6. Benefits of Using an Omni Channel Automation ── */}
             <section className="bg-white py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">Benefits</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                            Benefits of Using an AI Agent
+                            Benefits of Using an Omni Channel Automation
                         </h2>
                     </div>
 
@@ -340,14 +364,14 @@ export default function AiAgent() {
                 </div>
             </section>
 
-            {/* ── 7. Why AI Mate? Section ── */}
+            {/* ── 7. Why Chatmentorz Omni Channel Automation? ── */}
             <section className="bg-[#edf4ed] py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
                     {/* Left: Text & Bullet Checklist */}
                     <div className="flex-1">
                         <p className="text-[#01ab4a] text-[14px] font-semibold mb-3">About Us</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                            Why AI Mate?
+                            Why Chatmentorz Omni Channel Automation?
                         </h2>
                         <ul className="flex flex-col gap-3 mb-8">
                             {whyChoosePoints.map((point, i) => (
@@ -358,7 +382,7 @@ export default function AiAgent() {
                             ))}
                         </ul>
                         <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
-                            👉 With AI Mate, your team gets a powerful AI Agent that never sleeps, never misses a lead, and helps you scale faster than ever before.
+                            👉 With ChatMentorz Omni Channel Automation, your business is always connected, always responsive, and always ready to grow.
                         </p>
                         <Link
                             to="/contact-us"

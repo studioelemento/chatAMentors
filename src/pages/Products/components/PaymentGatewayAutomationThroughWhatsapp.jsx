@@ -2,12 +2,21 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import TrustLogos from './TrustLogos';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
-import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaCalendarAlt, FaGlobe } from 'react-icons/fa';
+import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaGlobe, FaCalendarAlt } from 'react-icons/fa';
 import bgImage from '../../../assets/img-Home/chat-bot-service-concept-enhancing-customer-experience-with-virtual-assistant-1.png';
 import logo1 from '../../../assets/img-Home/Chatmentorz.png';
 
-/* ─────────────── Inline SVG Icons for Features ─────────────── */
-const IconAutomate = () => (
+/* ─────────────── Inline SVG Icons for Key Features ─────────────── */
+const IconPayment = () => (
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
+        <rect x="8" y="16" width="48" height="32" rx="4" />
+        <line x1="8" y1="26" x2="56" y2="26" />
+        <rect x="14" y="34" width="12" height="6" rx="1" />
+        <circle cx="46" cy="37" r="4" />
+    </svg>
+);
+
+const IconAutomation = () => (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
         <rect x="14" y="22" width="36" height="28" rx="4" />
         <circle cx="24" cy="34" r="4" />
@@ -18,139 +27,129 @@ const IconAutomate = () => (
     </svg>
 );
 
-const IconTeam = () => (
+const IconOrder = () => (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <circle cx="32" cy="24" r="8" />
+        <rect x="12" y="8" width="40" height="48" rx="3" />
+        <line x1="20" y1="22" x2="44" y2="22" />
+        <line x1="20" y1="32" x2="44" y2="32" />
+        <line x1="20" y1="42" x2="36" y2="42" />
+        <path d="M20 16 L24 20 L32 12" />
+    </svg>
+);
+
+const IconZeroHuman = () => (
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
+        <circle cx="32" cy="20" r="10" />
         <path d="M16 56 C16 40 48 40 48 56" />
-        <circle cx="16" cy="32" r="6" />
-        <path d="M4 56 C4 46 20 46 24 50" />
-        <circle cx="48" cy="32" r="6" />
-        <path d="M60 56 C60 46 44 46 40 50" />
-    </svg>
-);
-
-const IconInsights = () => (
-    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <path d="M8 56 L56 56" />
-        <path d="M16 56 L16 32 M32 56 L32 16 M48 56 L48 40" />
-        <path d="M8 40 L24 24 L40 32 L56 8" />
-    </svg>
-);
-
-const IconContext = () => (
-    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <path d="M12 18 C12 14 16 10 24 10 H40 C48 10 52 14 52 18 V34 C52 38 48 42 40 42 H26 L14 52 V42 C12 40 12 36 12 34 Z" />
-        <circle cx="24" cy="26" r="3" fill="currentColor" />
-        <circle cx="32" cy="26" r="3" fill="currentColor" />
-        <circle cx="40" cy="26" r="3" fill="currentColor" />
+        <line x1="8" y1="8" x2="56" y2="56" strokeWidth="3" stroke="#ef4444" />
     </svg>
 );
 
 /* ─────────────── Data ─────────────── */
-const whatAiMateCanDo = [
+const keyFeatures = [
     {
-        icon: <IconAutomate />,
-        title: 'Automate Repetitive Workflows',
-        desc: 'Delegate routine tasks like replying to FAQs, lead qualification, and follow-ups. Free up your team to focus on high-value activities.',
+        icon: <IconPayment />,
+        title: 'Seamless Payment Integration',
+        desc: 'Connect your WhatsApp store with leading payment gateways. Collect secure payments directly inside the chat.',
         color: 'text-blue-600',
         bg: 'bg-blue-50',
     },
     {
-        icon: <IconTeam />,
-        title: 'Seamless Team Collaboration',
-        desc: 'AI Mate works alongside your sales, support, and marketing teams. Assigns leads, prioritizes tickets, and ensures nothing slips through the cracks.',
+        icon: <IconAutomation />,
+        title: 'End-to-End Sales Automation',
+        desc: 'From browsing to checkout — the entire flow runs on autopilot. Eliminate manual effort, reduce errors, and scale faster.',
         color: 'text-green-600',
         bg: 'bg-green-50',
     },
     {
-        icon: <IconInsights />,
-        title: 'Smart Insights & Reporting',
-        desc: 'Track performance, spot trends, and get actionable insights. Make data-driven decisions faster with AI-powered dashboards.',
+        icon: <IconOrder />,
+        title: 'Automated Order Management',
+        desc: 'Instant order confirmations, invoices, and updates sent to customers. You only need to focus on shipping and delivery.',
         color: 'text-purple-600',
         bg: 'bg-purple-50',
     },
     {
-        icon: <IconContext />,
-        title: 'Context-Aware Conversations',
-        desc: 'Understands customer queries and responds intelligently. Provides personalized experiences across WhatsApp, Instagram, Facebook, Telegram, and Websites.',
+        icon: <IconZeroHuman />,
+        title: 'Zero Human Intervention',
+        desc: 'Smart chatbots handle queries, sales, and payments 24/7. Provide a smooth, consistent shopping experience for every customer.',
         color: 'text-orange-500',
         bg: 'bg-orange-50',
-    }
+    },
 ];
 
-const availableActions = [
-    { title: 'Summarise Conversations in Teambox' },
-    { title: 'Generate Replies' },
-    { title: 'Improve & Rephrase' },
-    { title: 'Make it Shorter' },
-    { title: 'Fix Spelling & Grammar' },
+const howItWorksSteps = [
+    { title: 'Customers browse your WhatsApp catalog or send a keyword.' },
+    { title: 'The chatbot auto-generates product details, pricing, and an invoice.' },
+    { title: 'Customers pay instantly via integrated payment gateways (UPI, cards, wallets, net banking).' },
+    { title: 'Order confirmation and receipt are sent automatically.' },
+    { title: 'You ship the order — that\'s it!' },
 ];
 
-const benefits = [
+const driveMoreSales = [
     {
-        emoji: '🕒',
-        title: '24/7 Instant Customer Support',
-        desc: 'AI Agents are always available — day or night — to answer customer queries instantly. Reduces wait times, boosts responsiveness, and improves customer satisfaction.',
+        emoji: '🔗',
+        title: 'Automated Payment Link Generation',
+        desc: 'Instantly generate and send dynamic payment links within WhatsApp conversations. Links are tied to specific transactions, order IDs, or customer profiles.',
     },
     {
-        emoji: '⚡',
-        title: 'Faster Response & Resolution Times',
-        desc: 'Handles routine and repetitive inquiries (e.g., order status, pricing, FAQs) within seconds. Frees up human agents to focus on complex or high-value conversations.',
+        emoji: '🔒',
+        title: 'Secure Payment Processing',
+        desc: 'Payment links open secure, PCI-compliant gateways (Razorpay, Stripe, etc.). Supports UPI, credit/debit cards, net banking, wallets, etc.',
     },
     {
-        emoji: '✨',
-        title: 'Consistent, Error-Free Communication',
-        desc: 'Delivers standardized responses across all channels — WhatsApp, web chat, social media, etc. Minimizes human errors and maintains brand tone and accuracy.',
+        emoji: '📡',
+        title: 'Real-Time Payment Status Updates',
+        desc: 'Instantly notify customers when: Payment is successful, Payment fails, Payment is pending or expired. Useful for automating order confirmations, shipping updates, or follow-ups.',
     },
     {
-        emoji: '💰',
-        title: 'Cost Efficiency',
-        desc: 'Reduces the need for a large support team by automating 60–80% of customer interactions. Lowers operational costs while scaling support for growing customer bases.',
+        emoji: '💳',
+        title: 'Multi-Payment Method Support',
+        desc: 'Collect payments without leaving WhatsApp using native WhatsApp Payment Integration for Indian numbers, and share payment links for customers in other countries.',
     },
     {
-        emoji: '📈',
-        title: 'Drives Sales Through Smart Recommendations',
-        desc: 'AI Agents can act as virtual shopping assistants, guiding users to relevant products, promotions, or services based on preferences and behavior. Increases conversion rates and average order value.',
+        emoji: '🤖',
+        title: 'Chatbot Integration',
+        desc: 'Use AI or rule-based bots to: Trigger payment flows automatically, Answer FAQs about payments, Handle retries or payment failures.',
     },
     {
-        emoji: '🧠',
-        title: 'Intelligent Learning & Adaptation',
-        desc: 'Uses Natural Language Processing (NLP) and machine learning to understand customer intent, context, and sentiment. Improves over time based on real interactions and training.',
+        emoji: '🧾',
+        title: 'Automated Receipts & Invoices',
+        desc: 'Send digital receipts or invoices via WhatsApp as: Text summaries, PDF attachments, Downloadable links. Reduces manual follow-ups and improves post-purchase experience.',
     },
 ];
 
 const whyChoosePoints = [
-    '10x productivity boost for your team',
-    'Always-on, AI-driven customer engagement',
-    'Deep integration with Chatmentorz ecosystem',
-    'Reduces manual effort & accelerates growth',
-    'Scales effortlessly with your business'
+    'No app or website required — just WhatsApp',
+    'Fully automated sales and payment collection',
+    'Reduced manual workload → faster order processing',
+    'Secure, instant transactions with trusted payment gateways',
+    'Focus on growing your business while automation handles the rest',
 ];
 
 const faqs = [
     {
-        q: 'What is an AI Agent?',
-        a: 'An AI Agent is a virtual assistant powered by artificial intelligence that can understand, respond to, and take actions based on customer messages. It mimics human-like conversations and performs tasks such as answering FAQs, recommending products, handling bookings, and routing chats.',
+        q: 'What is Payment Gateway Automation through WhatsApp?',
+        a: 'It’s the integration of payment gateways (like Razorpay, Stripe, PayPal, etc.) with WhatsApp Business API or chatbot platforms to allow users to: Receive payment links Make payments securely Get automated confirmations and receipts …all within a WhatsApp conversation.',
     },
     {
-        q: 'How is an AI Agent different from a chatbot?',
-        a: 'Chatbots are often rule-based and respond to specific commands or keywords. AI Agents go further by using Natural Language Processing (NLP) and machine learning to understand context, intent, and sentiment, offering more natural and intelligent conversations.',
+        q: 'Is it safe to make payments via WhatsApp?',
+        a: 'Yes, when implemented correctly. Payments are processed via secure, PCI-compliant payment gateways. WhatsApp only delivers the payment link—actual transactions happen on secure gateway pages.',
     },
     {
-        q: 'What can an AI Agent do?',
-        a: 'Common capabilities include: Answering FAQs Recommending products/services Booking appointments Collecting customer data Routing conversations to human agents Running surveys or feedback forms Triggering workflows or automations in the CRM',
+        q: 'How does it work for customers?',
+        a: 'Customer interacts with the business on WhatsApp (e.g., placing an order or asking for a service). The system automatically generates a payment link and sends it. Customer clicks the link → completes payment on the secure gateway. WhatsApp bot confirms the payment instantly.',
     },
     {
-        q: 'Are AI Agents available 24/7?',
-        a: 'Yes. AI Agents operate 24/7, allowing you to provide instant responses to customers even outside business hours, improving response time and customer satisfaction.',
+        q: 'Which payment gateways support WhatsApp integration?',
+        a: 'Popular gateways with WhatsApp integration capabilities include: Razorpay Stripe PayU Instamojo PayPal Cashfree PhonePe for Business Billdesk (for utilities) Many of these integrate through platforms like: Twilio WATI Zoko AiSensy Yellow.ai Gupshup',
     },
     {
-        q: 'Can I customize the AI Agent for my business needs?',
-        a: 'Absolutely. You can configure: Custom responses Business-specific workflows Multi-language support Product catalogs Integration with your backend systems (CRM, ERP, etc.)',
+        q: 'Do I need a WhatsApp Business API account to automate payments?',
+        a: 'Yes. Automation is only possible through the WhatsApp Business API, not the regular WhatsApp Business app. You’ll also need a verified Facebook Business Manager account.',
     },
     {
-        q: 'Can the AI Agent escalate to a human agent?',
-        a: 'Yes. If the AI cannot resolve an issue or detects complex intent, it can automatically escalate the conversation to a live agent with full context.',
+        q: 'Can I accept UPI payments via WhatsApp automation?',
+        a: 'Yes. Many Indian gateways (like Razorpay and Cashfree) offer UPI-based links that can be shared through WhatsApp and paid instantly using any UPI app.',
     },
 ];
 
@@ -220,43 +219,43 @@ function FAQItem({ q, a, defaultOpen = false }) {
 }
 
 /* ─────────────── Main Component ─────────────── */
-export default function AiAgent() {
+export default function PaymentGatewayAutomationThroughWhatsapp() {
     return (
         <div className="font-sans">
 
             {/* ── 1. Hero ── */}
             <section className="relative pt-32 pb-40 overflow-hidden flex items-center justify-center bg-gray-100">
                 <div className="absolute inset-0 z-0">
-                    <img src={bgImage} alt="AI Agent Background" className="w-full h-full object-cover object-center opacity-40 blur-[2px]" />
+                    <img src={bgImage} alt="Payment Gateway Automation Background" className="w-full h-full object-cover object-center opacity-40 blur-[2px]" />
                     <div className="absolute inset-0 bg-white/40 mix-blend-overlay" />
                 </div>
                 <div className="relative z-10 text-center flex flex-col items-center">
-                    <h1 className="text-5xl md:text-6xl font-bold text-[#1f2937] mb-4">AI AGENT</h1>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1f2937] mb-4 px-4">Payment Gateway Automation<br className="hidden md:block" /> through Whatsapp</h1>
                     <div className="flex items-center space-x-2 text-[15px] font-medium">
                         <Link to="/" className="flex items-center text-[#1f2937] hover:text-[#01ab4a] transition-colors">
                             <Home size={16} className="mr-1.5 mb-[2px]" />
                             Home
                         </Link>
                         <ChevronRight size={16} className="text-gray-500" />
-                        <span className="text-[#01ab4a]">AI AGENT</span>
+                        <span className="text-[#01ab4a]">Payment Gateway Automation through Whatsapp</span>
                     </div>
                 </div>
             </section>
 
-            {/* ── 2. Intro Section ── */}
+            {/* ── 2. Automate Sales. Collect Payments. Focus Only on Shipping. ── */}
             <section className="max-w-7xl mx-auto px-6 lg:px-16 py-20 flex flex-col lg:flex-row items-center gap-14 bg-white">
                 <div className="flex-1">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                        Boost Your Team Productivity 10x with AI Mate
+                        Automate Sales. Collect Payments.<br />Focus Only on Shipping.
                     </h2>
                     <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
-                        Meet AI Mate, your smart digital teammate — tightly integrated with the ChatMentorz product ecosystem. From handling customer conversations to automating repetitive tasks, AI Mate works 24/7 to supercharge your business efficiency.
+                        With ChatMentorz Payment Gateway Automation, you can manage products, accept payments, and complete sales — all inside WhatsApp. No mobile app, no eCommerce website, and no human intervention required. Just WhatsApp automation handling everything while you focus on fulfilling orders.
                     </p>
                 </div>
                 <div className="flex-1 flex justify-center">
                     <img
-                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&q=80"
-                        alt="AI Agent Interface Mockup"
+                        src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80"
+                        alt="Payment Gateway Automation"
                         className="w-full max-w-[500px] object-cover rounded-xl shadow-lg"
                     />
                 </div>
@@ -265,17 +264,17 @@ export default function AiAgent() {
             {/* ── 3. Client Logos Strip ── */}
             <TrustLogos />
 
-            {/* ── 4. What AI Mate Can Do (Grid) ── */}
+            {/* ── 4. Key Features (Grid) ── */}
             <section className="bg-white py-20 px-6 lg:px-16 border-t border-gray-100">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">How It's Work</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            What AI Mate Can Do
+                            Key Features
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {whatAiMateCanDo.map((s, i) => (
+                        {keyFeatures.map((s, i) => (
                             <div key={i} className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center border border-gray-100 hover:shadow-lg transition-shadow">
                                 <div className={`w-20 h-20 rounded-full ${s.bg} flex items-center justify-center ${s.color} mb-5`}>
                                     {s.icon}
@@ -288,27 +287,26 @@ export default function AiAgent() {
                 </div>
             </section>
 
-            {/* ── 5. Available Actions & Prompts (2-Column with Green Cards) ── */}
+            {/* ── 5. How It Works (2-Column with Green Cards) ── */}
             <section className="bg-[#edf4ed] py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
                     {/* Left: Illustration */}
                     <div className="flex-1 flex justify-center">
                         <img
                             src="https://images.unsplash.com/photo-1655393001768-d946c998b49f?w=500&q=80"
-                            alt="Available Actions and Prompts"
+                            alt="How Payment Gateway Works"
                             className="w-full max-w-[450px] rounded-xl object-cover shadow-md"
                         />
                     </div>
                     {/* Right: Title + Green Feature Cards */}
                     <div className="flex-1">
-
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                            Available Actions & Prompts
+                            How It Works
                         </h2>
                         <div className="flex flex-col gap-4">
-                            {availableActions.map((item, i) => (
+                            {howItWorksSteps.map((item, i) => (
                                 <div key={i} className="bg-[#01ab4a] text-white px-8 py-5 rounded-lg w-full shadow-sm flex items-center gap-4">
-                                    <h4 className="text-[17px] font-semibold m-0">{item.title}</h4>
+                                    <h4 className="text-[15px] font-semibold m-0">{item.title}</h4>
                                 </div>
                             ))}
                         </div>
@@ -316,18 +314,18 @@ export default function AiAgent() {
                 </div>
             </section>
 
-            {/* ── 6. Benefits of Using an AI Agent ── */}
+            {/* ── 6. Key Features That Drive More Sales ── */}
             <section className="bg-white py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">Benefits</p>
+                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">Features</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                            Benefits of Using an AI Agent
+                            Key Features That Drive More Sales
                         </h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-14">
-                        {benefits.map((b, i) => (
+                        {driveMoreSales.map((b, i) => (
                             <div key={i} className="flex flex-col items-center text-center">
                                 <div className="w-24 h-24 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-4xl mb-5">
                                     {b.emoji}
@@ -340,14 +338,14 @@ export default function AiAgent() {
                 </div>
             </section>
 
-            {/* ── 7. Why AI Mate? Section ── */}
+            {/* ── 7. Why Choose ChatMentorz Payment Automation? ── */}
             <section className="bg-[#edf4ed] py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
                     {/* Left: Text & Bullet Checklist */}
                     <div className="flex-1">
                         <p className="text-[#01ab4a] text-[14px] font-semibold mb-3">About Us</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                            Why AI Mate?
+                            Why Choose ChatMentorz Payment Automation?
                         </h2>
                         <ul className="flex flex-col gap-3 mb-8">
                             {whyChoosePoints.map((point, i) => (
@@ -358,7 +356,7 @@ export default function AiAgent() {
                             ))}
                         </ul>
                         <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
-                            👉 With AI Mate, your team gets a powerful AI Agent that never sleeps, never misses a lead, and helps you scale faster than ever before.
+                            👉 With Payment Gateway Automation through WhatsApp, your entire sales cycle is automated — from product discovery to payment — leaving you free to focus on shipping and scaling.
                         </p>
                         <Link
                             to="/contact-us"

@@ -92,9 +92,15 @@ export default function Products() {
           const isSmartKeywordAutomation = product.title === "Smart Keyword Automation";
           const isWhatsappCatalogAutomation = product.title === "Whatsapp Catalog Automation";
           const isAiAgent = product.title === "AI AGENT";
+          const isOmniChannelAutomation = product.title === "Omni Channel Automation";
+          const isPaymentGatewayAutomationThroughWhatsapp = product.title === "Payment Gateway Automation Through Whatsapp";
+          const isQrCodeLinkGenerator = product.title === "QR Code & Link Generator";
+          const isTemplateMessagingBroadcasting = product.title === "Template Messaging & Broadcasting";
+          const isNoCodeChatbotBuilder = product.title === "No Code Chatbot Builder";
+          const isOtherFeatures = product.title === "Other Features";
 
           const cardContent = (
-            <div key={index} className={`flex flex-col items-start text-left group hover:scale-[1.02] transition-transform duration-300 ${isOmniInbox || isWhatsappCommerce || isOmniCRM || isSmartKeywordAutomation || isWhatsappCatalogAutomation || isAiAgent ? 'cursor-pointer' : ''}`}>
+            <div key={index} className={`flex flex-col items-start text-left group hover:scale-[1.02] transition-transform duration-300 ${isOmniInbox || isWhatsappCommerce || isOmniCRM || isSmartKeywordAutomation || isWhatsappCatalogAutomation || isAiAgent || isOmniChannelAutomation || isPaymentGatewayAutomationThroughWhatsapp || isQrCodeLinkGenerator || isTemplateMessagingBroadcasting || isNoCodeChatbotBuilder || isOtherFeatures ? 'cursor-pointer' : ''}`}>
               <div className="mb-4 bg-gray-50 p-3 rounded-xl">
                 {product.icon}
               </div>
@@ -127,6 +133,30 @@ export default function Products() {
             </Link>
           ) : isAiAgent ? (
             <Link key={index} to="/products/ai-agent" className="no-underline">
+              {cardContent}
+            </Link>
+          ) : isOmniChannelAutomation ? (
+            <Link key={index} to="/products/omni-channel-automation" className="no-underline">
+              {cardContent}
+            </Link>
+          ) : isPaymentGatewayAutomationThroughWhatsapp ? (
+            <Link key={index} to="/products/payment-gateway-automation-through-whatsapp" className="no-underline">
+              {cardContent}
+            </Link>
+          ) : isQrCodeLinkGenerator ? (
+            <Link key={index} to="/products/qr-code-link-generator" className="no-underline">
+              {cardContent}
+            </Link>
+          ) : isTemplateMessagingBroadcasting ? (
+            <Link key={index} to="/products/template-messaging-broadcasting" className="no-underline">
+              {cardContent}
+            </Link>
+          ) : isNoCodeChatbotBuilder ? (
+            <Link key={index} to="/products/no-code-chatbot-builder" className="no-underline">
+              {cardContent}
+            </Link>
+          ) : isOtherFeatures ? (
+            <Link key={index} to="/products/other-features" className="no-underline">
               {cardContent}
             </Link>
           ) : (

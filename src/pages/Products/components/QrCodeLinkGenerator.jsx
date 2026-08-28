@@ -2,155 +2,158 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import TrustLogos from './TrustLogos';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
-import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaCalendarAlt, FaGlobe } from 'react-icons/fa';
+import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaGlobe, FaCalendarAlt } from 'react-icons/fa';
 import bgImage from '../../../assets/img-Home/chat-bot-service-concept-enhancing-customer-experience-with-virtual-assistant-1.png';
 import logo1 from '../../../assets/img-Home/Chatmentorz.png';
 
 /* ─────────────── Inline SVG Icons for Features ─────────────── */
-const IconAutomate = () => (
+const IconLink = () => (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <rect x="14" y="22" width="36" height="28" rx="4" />
-        <circle cx="24" cy="34" r="4" />
-        <circle cx="40" cy="34" r="4" />
-        <line x1="28" y1="44" x2="36" y2="44" />
-        <line x1="32" y1="10" x2="32" y2="22" />
-        <circle cx="32" cy="8" r="4" />
+        <path d="M26 38 L38 26" />
+        <path d="M30 18 L36 12 C42 6 52 6 58 12 C64 18 64 28 58 34 L52 40" />
+        <path d="M34 46 L28 52 C22 58 12 58 6 52 C0 46 0 36 6 30 L12 24" />
     </svg>
 );
 
-const IconTeam = () => (
+const IconQr = () => (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <circle cx="32" cy="24" r="8" />
-        <path d="M16 56 C16 40 48 40 48 56" />
-        <circle cx="16" cy="32" r="6" />
-        <path d="M4 56 C4 46 20 46 24 50" />
-        <circle cx="48" cy="32" r="6" />
-        <path d="M60 56 C60 46 44 46 40 50" />
+        <rect x="8" y="8" width="20" height="20" rx="2" />
+        <rect x="36" y="8" width="20" height="20" rx="2" />
+        <rect x="8" y="36" width="20" height="20" rx="2" />
+        <rect x="14" y="14" width="8" height="8" fill="currentColor" />
+        <rect x="42" y="14" width="8" height="8" fill="currentColor" />
+        <rect x="14" y="42" width="8" height="8" fill="currentColor" />
+        <rect x="36" y="36" width="8" height="8" fill="currentColor" />
+        <rect x="48" y="48" width="8" height="8" fill="currentColor" />
     </svg>
 );
 
-const IconInsights = () => (
+const IconTrack = () => (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <path d="M8 56 L56 56" />
-        <path d="M16 56 L16 32 M32 56 L32 16 M48 56 L48 40" />
-        <path d="M8 40 L24 24 L40 32 L56 8" />
+        <circle cx="32" cy="32" r="24" />
+        <path d="M32 16 V32 L42 42" />
+        <path d="M12 32 H8 M56 32 H52 M32 12 V8 M32 56 V52" />
     </svg>
 );
 
-const IconContext = () => (
+const IconOmni = () => (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <path d="M12 18 C12 14 16 10 24 10 H40 C48 10 52 14 52 18 V34 C52 38 48 42 40 42 H26 L14 52 V42 C12 40 12 36 12 34 Z" />
-        <circle cx="24" cy="26" r="3" fill="currentColor" />
-        <circle cx="32" cy="26" r="3" fill="currentColor" />
-        <circle cx="40" cy="26" r="3" fill="currentColor" />
+        <circle cx="32" cy="32" r="8" />
+        <circle cx="16" cy="16" r="6" />
+        <circle cx="48" cy="16" r="6" />
+        <circle cx="16" cy="48" r="6" />
+        <circle cx="48" cy="48" r="6" />
+        <line x1="22" y1="20" x2="26" y2="26" />
+        <line x1="42" y1="20" x2="38" y2="26" />
+        <line x1="22" y1="44" x2="26" y2="38" />
+        <line x1="42" y1="44" x2="38" y2="38" />
     </svg>
 );
 
 /* ─────────────── Data ─────────────── */
-const whatAiMateCanDo = [
+const whatYouCanDo = [
     {
-        icon: <IconAutomate />,
-        title: 'Automate Repetitive Workflows',
-        desc: 'Delegate routine tasks like replying to FAQs, lead qualification, and follow-ups. Free up your team to focus on high-value activities.',
+        icon: <IconLink />,
+        title: 'Smart Links for Every Campaign',
+        desc: 'Generate unique links to share in ads, emails, or social media. Drive users directly into chat conversations and boost engagement.',
         color: 'text-blue-600',
         bg: 'bg-blue-50',
     },
     {
-        icon: <IconTeam />,
-        title: 'Seamless Team Collaboration',
-        desc: 'AI Mate works alongside your sales, support, and marketing teams. Assigns leads, prioritizes tickets, and ensures nothing slips through the cracks.',
+        icon: <IconQr />,
+        title: 'QR Codes That Convert',
+        desc: 'Place QR codes on flyers, banners, receipts, or stores. Customers scan → start chatting instantly on their preferred channel.',
         color: 'text-green-600',
         bg: 'bg-green-50',
     },
     {
-        icon: <IconInsights />,
-        title: 'Smart Insights & Reporting',
-        desc: 'Track performance, spot trends, and get actionable insights. Make data-driven decisions faster with AI-powered dashboards.',
+        icon: <IconTrack />,
+        title: 'Track & Optimize',
+        desc: 'Measure clicks, scans, and conversations generated. Optimize campaigns with data-driven insights.',
         color: 'text-purple-600',
         bg: 'bg-purple-50',
     },
     {
-        icon: <IconContext />,
-        title: 'Context-Aware Conversations',
-        desc: 'Understands customer queries and responds intelligently. Provides personalized experiences across WhatsApp, Instagram, Facebook, Telegram, and Websites.',
+        icon: <IconOmni />,
+        title: 'Omnichannel Ready',
+        desc: 'Works seamlessly with WhatsApp, Instagram, Facebook Messenger, Telegram, and Website Chatbots.',
         color: 'text-orange-500',
         bg: 'bg-orange-50',
-    }
+    },
 ];
 
-const availableActions = [
-    { title: 'Summarise Conversations in Teambox' },
-    { title: 'Generate Replies' },
-    { title: 'Improve & Rephrase' },
-    { title: 'Make it Shorter' },
-    { title: 'Fix Spelling & Grammar' },
+const keyFeaturesList = [
+    { title: 'Dynamic & Static QR Code Generation' },
+    { title: 'Custom Link Shortening' },
+    { title: 'Click & Scan Tracking' },
+    { title: 'Custom QR Code Design' },
+    { title: 'Payment QR & Link Integration' },
 ];
 
 const benefits = [
     {
-        emoji: '🕒',
-        title: '24/7 Instant Customer Support',
-        desc: 'AI Agents are always available — day or night — to answer customer queries instantly. Reduces wait times, boosts responsiveness, and improves customer satisfaction.',
+        emoji: '🌐',
+        title: 'Seamless Offline-to-Online Connectivity',
+        desc: 'Instantly connect offline materials (flyers, posters, packaging) to digital content. Customers simply scan or click to access websites, apps, videos, menus, or forms.',
+    },
+    {
+        emoji: '💳',
+        title: 'Simplified Digital Payments',
+        desc: 'Generate UPI or payment links as QR codes for quick, contactless payments. Useful in shops, invoices, or WhatsApp automation for collecting money.',
+    },
+    {
+        emoji: '🎯',
+        title: 'Smart Marketing Campaigns',
+        desc: 'Track clicks and scans to analyze engagement. Add UTM parameters to short links for campaign performance tracking in Google Analytics.',
     },
     {
         emoji: '⚡',
-        title: 'Faster Response & Resolution Times',
-        desc: 'Handles routine and repetitive inquiries (e.g., order status, pricing, FAQs) within seconds. Frees up human agents to focus on complex or high-value conversations.',
+        title: 'Smarter Marketing Automation',
+        desc: 'Launch targeted broadcast campaigns on WhatsApp and social channels. Re-engage customers with cart reminders, coupons, gamified promotions, and behavior-triggered messaging.',
     },
     {
-        emoji: '✨',
-        title: 'Consistent, Error-Free Communication',
-        desc: 'Delivers standardized responses across all channels — WhatsApp, web chat, social media, etc. Minimizes human errors and maintains brand tone and accuracy.',
+        emoji: '📊',
+        title: 'Real-Time Analytics',
+        desc: 'See who’s clicking or scanning your QR codes/links: Location, Device type, Time and frequency. Helps measure success and optimize content or placement.',
     },
     {
-        emoji: '💰',
-        title: 'Cost Efficiency',
-        desc: 'Reduces the need for a large support team by automating 60–80% of customer interactions. Lowers operational costs while scaling support for growing customer bases.',
-    },
-    {
-        emoji: '📈',
-        title: 'Drives Sales Through Smart Recommendations',
-        desc: 'AI Agents can act as virtual shopping assistants, guiding users to relevant products, promotions, or services based on preferences and behavior. Increases conversion rates and average order value.',
-    },
-    {
-        emoji: '🧠',
-        title: 'Intelligent Learning & Adaptation',
-        desc: 'Uses Natural Language Processing (NLP) and machine learning to understand customer intent, context, and sentiment. Improves over time based on real interactions and training.',
+        emoji: '🎨',
+        title: 'Branding & Customization',
+        desc: 'Customize QR codes with logos, colors, and design to match your brand. Create branded short URLs (e.g., yourbrand.to/sale) to increase trust and recognition.',
     },
 ];
 
 const whyChoosePoints = [
-    '10x productivity boost for your team',
-    'Always-on, AI-driven customer engagement',
-    'Deep integration with Chatmentorz ecosystem',
-    'Reduces manual effort & accelerates growth',
-    'Scales effortlessly with your business'
+    'Simplifies customer entry points',
+    'Boosts campaign performance with direct engagement',
+    'Provides measurable results & insights',
+    'Omnichannel support for maximum reach',
 ];
 
 const faqs = [
     {
-        q: 'What is an AI Agent?',
-        a: 'An AI Agent is a virtual assistant powered by artificial intelligence that can understand, respond to, and take actions based on customer messages. It mimics human-like conversations and performs tasks such as answering FAQs, recommending products, handling bookings, and routing chats.',
+        q: 'What is a QR Code & Link Generator?',
+        a: 'It’s a tool or software that allows users to: Create QR codes linked to specific URLs or actions Generate short, trackable links for easy sharing Often includes analytics, customization, and branding features.',
     },
     {
-        q: 'How is an AI Agent different from a chatbot?',
-        a: 'Chatbots are often rule-based and respond to specific commands or keywords. AI Agents go further by using Natural Language Processing (NLP) and machine learning to understand context, intent, and sentiment, offering more natural and intelligent conversations.',
+        q: 'What can I link a QR code or short link to?',
+        a: 'You can link to almost anything, such as: Websites or landing pages Payment pages Product pages WhatsApp chats or messages Google Forms or Calendars PDFs or downloads App download links.',
     },
     {
-        q: 'What can an AI Agent do?',
-        a: 'Common capabilities include: Answering FAQs Recommending products/services Booking appointments Collecting customer data Routing conversations to human agents Running surveys or feedback forms Triggering workflows or automations in the CRM',
+        q: 'Are QR codes safe to use?',
+        a: 'Yes, but you should: Use trusted QR generators Avoid scanning unknown or suspicious codes Ensure the linked content is secure (HTTPS) For payments, always verify the URL and sender.',
     },
     {
-        q: 'Are AI Agents available 24/7?',
-        a: 'Yes. AI Agents operate 24/7, allowing you to provide instant responses to customers even outside business hours, improving response time and customer satisfaction.',
+        q: 'Can I customize QR codes with logos and colors?',
+        a: 'Yes. Many generators allow: Custom colors Company logos or icons in the center Shape and design tweaks for branding Just make sure the design doesn’t interfere with scannability.',
     },
     {
-        q: 'Can I customize the AI Agent for my business needs?',
-        a: 'Absolutely. You can configure: Custom responses Business-specific workflows Multi-language support Product catalogs Integration with your backend systems (CRM, ERP, etc.)',
+        q: 'Can QR codes be used for payments?',
+        a: 'Yes. You can generate QR codes that link to: UPI payment requests (India) Razorpay, Stripe, PayPal payment links WhatsApp payment flows Great for retail counters, e-commerce, and service payments.',
     },
     {
-        q: 'Can the AI Agent escalate to a human agent?',
-        a: 'Yes. If the AI cannot resolve an issue or detects complex intent, it can automatically escalate the conversation to a live agent with full context.',
+        q: 'Do QR codes or short links expire?',
+        a: 'Static QR codes: Never expire, but content can be outdated. Dynamic QR codes / short links: Can be set to expire or deactivate. Always check the settings of your generator tool.',
     },
 ];
 
@@ -220,43 +223,43 @@ function FAQItem({ q, a, defaultOpen = false }) {
 }
 
 /* ─────────────── Main Component ─────────────── */
-export default function AiAgent() {
+export default function QrCodeLinkGenerator() {
     return (
         <div className="font-sans">
 
             {/* ── 1. Hero ── */}
             <section className="relative pt-32 pb-40 overflow-hidden flex items-center justify-center bg-gray-100">
                 <div className="absolute inset-0 z-0">
-                    <img src={bgImage} alt="AI Agent Background" className="w-full h-full object-cover object-center opacity-40 blur-[2px]" />
+                    <img src={bgImage} alt="QR Code & Link Generator Background" className="w-full h-full object-cover object-center opacity-40 blur-[2px]" />
                     <div className="absolute inset-0 bg-white/40 mix-blend-overlay" />
                 </div>
                 <div className="relative z-10 text-center flex flex-col items-center">
-                    <h1 className="text-5xl md:text-6xl font-bold text-[#1f2937] mb-4">AI AGENT</h1>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1f2937] mb-4 px-4">QR Code & Link Generator</h1>
                     <div className="flex items-center space-x-2 text-[15px] font-medium">
                         <Link to="/" className="flex items-center text-[#1f2937] hover:text-[#01ab4a] transition-colors">
                             <Home size={16} className="mr-1.5 mb-[2px]" />
                             Home
                         </Link>
                         <ChevronRight size={16} className="text-gray-500" />
-                        <span className="text-[#01ab4a]">AI AGENT</span>
+                        <span className="text-[#01ab4a]">QR Code & Link Generator</span>
                     </div>
                 </div>
             </section>
 
-            {/* ── 2. Intro Section ── */}
+            {/* ── 2. One Tool, Endless Ways to Reach Your Audience ── */}
             <section className="max-w-7xl mx-auto px-6 lg:px-16 py-20 flex flex-col lg:flex-row items-center gap-14 bg-white">
                 <div className="flex-1">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                        Boost Your Team Productivity 10x with AI Mate
+                        One Tool, Endless Ways<br />to Reach Your Audience
                     </h2>
                     <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
-                        Meet AI Mate, your smart digital teammate — tightly integrated with the ChatMentorz product ecosystem. From handling customer conversations to automating repetitive tasks, AI Mate works 24/7 to supercharge your business efficiency.
+                        With ChatMentorz QR Code & Link Generator, you can instantly create smart, trackable entry points that connect your customers directly to conversations across WhatsApp, Instagram, Facebook, Telegram, and Websites.
                     </p>
                 </div>
                 <div className="flex-1 flex justify-center">
                     <img
-                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&q=80"
-                        alt="AI Agent Interface Mockup"
+                        src="https://images.unsplash.com/photo-1595079672139-cee2568b9711?w=500&q=80"
+                        alt="QR Code & Link Generator"
                         className="w-full max-w-[500px] object-cover rounded-xl shadow-lg"
                     />
                 </div>
@@ -265,17 +268,17 @@ export default function AiAgent() {
             {/* ── 3. Client Logos Strip ── */}
             <TrustLogos />
 
-            {/* ── 4. What AI Mate Can Do (Grid) ── */}
+            {/* ── 4. What You Can Do (Grid) ── */}
             <section className="bg-white py-20 px-6 lg:px-16 border-t border-gray-100">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">How It's Work</p>
+                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">How it's work</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            What AI Mate Can Do
+                            What You Can Do
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {whatAiMateCanDo.map((s, i) => (
+                        {whatYouCanDo.map((s, i) => (
                             <div key={i} className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center border border-gray-100 hover:shadow-lg transition-shadow">
                                 <div className={`w-20 h-20 rounded-full ${s.bg} flex items-center justify-center ${s.color} mb-5`}>
                                     {s.icon}
@@ -288,27 +291,26 @@ export default function AiAgent() {
                 </div>
             </section>
 
-            {/* ── 5. Available Actions & Prompts (2-Column with Green Cards) ── */}
+            {/* ── 5. Key Features – QR Code & Link Generator (2-Column with Green Cards) ── */}
             <section className="bg-[#edf4ed] py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
                     {/* Left: Illustration */}
                     <div className="flex-1 flex justify-center">
                         <img
-                            src="https://images.unsplash.com/photo-1655393001768-d946c998b49f?w=500&q=80"
-                            alt="Available Actions and Prompts"
+                            src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&q=80"
+                            alt="QR Code & Link Features"
                             className="w-full max-w-[450px] rounded-xl object-cover shadow-md"
                         />
                     </div>
                     {/* Right: Title + Green Feature Cards */}
                     <div className="flex-1">
-
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                            Available Actions & Prompts
+                            Key Features – QR Code & Link Generator
                         </h2>
                         <div className="flex flex-col gap-4">
-                            {availableActions.map((item, i) => (
+                            {keyFeaturesList.map((item, i) => (
                                 <div key={i} className="bg-[#01ab4a] text-white px-8 py-5 rounded-lg w-full shadow-sm flex items-center gap-4">
-                                    <h4 className="text-[17px] font-semibold m-0">{item.title}</h4>
+                                    <h4 className="text-[15px] font-semibold m-0">{item.title}</h4>
                                 </div>
                             ))}
                         </div>
@@ -316,13 +318,13 @@ export default function AiAgent() {
                 </div>
             </section>
 
-            {/* ── 6. Benefits of Using an AI Agent ── */}
+            {/* ── 6. Benefits of a QR Code & Link Generator ── */}
             <section className="bg-white py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">Benefits</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                            Benefits of Using an AI Agent
+                            Benefits of a QR Code & Link Generator
                         </h2>
                     </div>
 
@@ -340,14 +342,14 @@ export default function AiAgent() {
                 </div>
             </section>
 
-            {/* ── 7. Why AI Mate? Section ── */}
+            {/* ── 7. Why Use ChatMentorz Generator? ── */}
             <section className="bg-[#edf4ed] py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
                     {/* Left: Text & Bullet Checklist */}
                     <div className="flex-1">
                         <p className="text-[#01ab4a] text-[14px] font-semibold mb-3">About Us</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                            Why AI Mate?
+                            Why Use ChatMentorz Generator?
                         </h2>
                         <ul className="flex flex-col gap-3 mb-8">
                             {whyChoosePoints.map((point, i) => (
@@ -358,7 +360,7 @@ export default function AiAgent() {
                             ))}
                         </ul>
                         <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
-                            👉 With AI Mate, your team gets a powerful AI Agent that never sleeps, never misses a lead, and helps you scale faster than ever before.
+                            👉 With ChatMentorz QR Code & Link Generator, every scan and click is an opportunity to start a meaningful conversation.
                         </p>
                         <Link
                             to="/contact-us"

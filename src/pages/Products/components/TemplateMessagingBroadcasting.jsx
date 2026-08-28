@@ -1,156 +1,140 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import TrustLogos from './TrustLogos';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
-import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaCalendarAlt, FaGlobe } from 'react-icons/fa';
+import TrustLogos from './TrustLogos';
+import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaGlobe, FaCalendarAlt } from 'react-icons/fa';
 import bgImage from '../../../assets/img-Home/chat-bot-service-concept-enhancing-customer-experience-with-virtual-assistant-1.png';
 import logo1 from '../../../assets/img-Home/Chatmentorz.png';
 
 /* ─────────────── Inline SVG Icons for Features ─────────────── */
-const IconAutomate = () => (
+const IconBroadcast = () => (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <rect x="14" y="22" width="36" height="28" rx="4" />
-        <circle cx="24" cy="34" r="4" />
-        <circle cx="40" cy="34" r="4" />
-        <line x1="28" y1="44" x2="36" y2="44" />
-        <line x1="32" y1="10" x2="32" y2="22" />
-        <circle cx="32" cy="8" r="4" />
+        <path d="M12 24 L24 24 L40 12 V52 L24 40 L12 40 Z" fill="none" />
+        <path d="M48 22 C52 26 52 38 48 42" />
+        <path d="M54 16 C62 24 62 40 54 48" />
     </svg>
 );
 
-const IconTeam = () => (
+const IconInstagram = () => (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <circle cx="32" cy="24" r="8" />
-        <path d="M16 56 C16 40 48 40 48 56" />
-        <circle cx="16" cy="32" r="6" />
-        <path d="M4 56 C4 46 20 46 24 50" />
-        <circle cx="48" cy="32" r="6" />
-        <path d="M60 56 C60 46 44 46 40 50" />
+        <rect x="12" y="12" width="40" height="40" rx="10" />
+        <circle cx="32" cy="32" r="10" />
+        <circle cx="44" cy="20" r="3" fill="currentColor" />
     </svg>
 );
 
-const IconInsights = () => (
+const IconFacebook = () => (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <path d="M8 56 L56 56" />
-        <path d="M16 56 L16 32 M32 56 L32 16 M48 56 L48 40" />
-        <path d="M8 40 L24 24 L40 32 L56 8" />
+        <path d="M36 60 V36 H44 L46 24 H36 V18 C36 15 38 14 41 14 H46 V4 H38 C28 4 24 10 24 18 V24 H18 V36 H24 V60" fill="none" />
     </svg>
 );
 
-const IconContext = () => (
+const IconTelegram = () => (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
-        <path d="M12 18 C12 14 16 10 24 10 H40 C48 10 52 14 52 18 V34 C52 38 48 42 40 42 H26 L14 52 V42 C12 40 12 36 12 34 Z" />
-        <circle cx="24" cy="26" r="3" fill="currentColor" />
-        <circle cx="32" cy="26" r="3" fill="currentColor" />
-        <circle cx="40" cy="26" r="3" fill="currentColor" />
+        <path d="M8 30 L56 10 L44 54 L30 40 L22 48 V38 L40 22 L18 34 Z" fill="none" />
     </svg>
 );
 
 /* ─────────────── Data ─────────────── */
-const whatAiMateCanDo = [
+const whatYouCanDo = [
     {
-        icon: <IconAutomate />,
-        title: 'Automate Repetitive Workflows',
-        desc: 'Delegate routine tasks like replying to FAQs, lead qualification, and follow-ups. Free up your team to focus on high-value activities.',
-        color: 'text-blue-600',
-        bg: 'bg-blue-50',
-    },
-    {
-        icon: <IconTeam />,
-        title: 'Seamless Team Collaboration',
-        desc: 'AI Mate works alongside your sales, support, and marketing teams. Assigns leads, prioritizes tickets, and ensures nothing slips through the cracks.',
+        icon: <IconBroadcast />,
+        title: 'WhatsApp Broadcasting',
+        desc: 'Send approved template messages to thousands of contacts instantly. Share updates, offers, order confirmations, and reminders. Nurture leads with personalized communication at scale.',
         color: 'text-green-600',
         bg: 'bg-green-50',
     },
     {
-        icon: <IconInsights />,
-        title: 'Smart Insights & Reporting',
-        desc: 'Track performance, spot trends, and get actionable insights. Make data-driven decisions faster with AI-powered dashboards.',
-        color: 'text-purple-600',
-        bg: 'bg-purple-50',
+        icon: <IconInstagram />,
+        title: 'Instagram Messaging',
+        desc: 'Reach out to followers via DMs with offers, product catalogs, or new arrivals. Automate nurturing campaigns to keep your community engaged.',
+        color: 'text-pink-600',
+        bg: 'bg-pink-50',
     },
     {
-        icon: <IconContext />,
-        title: 'Context-Aware Conversations',
-        desc: 'Understands customer queries and responds intelligently. Provides personalized experiences across WhatsApp, Instagram, Facebook, Telegram, and Websites.',
-        color: 'text-orange-500',
-        bg: 'bg-orange-50',
-    }
+        icon: <IconFacebook />,
+        title: 'Facebook Broadcasting',
+        desc: 'Deliver campaigns directly through Messenger. Announce promotions, events, or product launches. Re-engage followers who interacted with your page or posts.',
+        color: 'text-blue-600',
+        bg: 'bg-blue-50',
+    },
+    {
+        icon: <IconTelegram />,
+        title: 'Telegram Broadcasting',
+        desc: 'Push bulk notifications to groups, channels, or subscribers. Share instant updates, alerts, and promotions with your Telegram audience.',
+        color: 'text-sky-500',
+        bg: 'bg-sky-50',
+    },
 ];
 
-const availableActions = [
-    { title: 'Summarise Conversations in Teambox' },
-    { title: 'Generate Replies' },
-    { title: 'Improve & Rephrase' },
-    { title: 'Make it Shorter' },
-    { title: 'Fix Spelling & Grammar' },
+const keyFeaturesList = [
+    { title: 'Pre-approved Message Templates' },
+    { title: 'Dynamic Personalization' },
+    { title: 'Bulk Messaging (Broadcasting)' },
+    { title: 'Message Scheduling' },
+    { title: 'Automation Integration' },
 ];
 
 const benefits = [
     {
-        emoji: '🕒',
-        title: '24/7 Instant Customer Support',
-        desc: 'AI Agents are always available — day or night — to answer customer queries instantly. Reduces wait times, boosts responsiveness, and improves customer satisfaction.',
+        emoji: '🚀',
+        title: 'High Engagement',
+        desc: 'Messaging apps like WhatsApp have 70–90% open rates',
     },
     {
-        emoji: '⚡',
-        title: 'Faster Response & Resolution Times',
-        desc: 'Handles routine and repetitive inquiries (e.g., order status, pricing, FAQs) within seconds. Frees up human agents to focus on complex or high-value conversations.',
-    },
-    {
-        emoji: '✨',
-        title: 'Consistent, Error-Free Communication',
-        desc: 'Delivers standardized responses across all channels — WhatsApp, web chat, social media, etc. Minimizes human errors and maintains brand tone and accuracy.',
+        emoji: '🎯',
+        title: 'Personalization at Scale',
+        desc: 'Use variables to personalize.',
     },
     {
         emoji: '💰',
         title: 'Cost Efficiency',
-        desc: 'Reduces the need for a large support team by automating 60–80% of customer interactions. Lowers operational costs while scaling support for growing customer bases.',
+        desc: 'Especially compared to voice or manual support calls.',
     },
     {
-        emoji: '📈',
-        title: 'Drives Sales Through Smart Recommendations',
-        desc: 'AI Agents can act as virtual shopping assistants, guiding users to relevant products, promotions, or services based on preferences and behavior. Increases conversion rates and average order value.',
+        emoji: '🛡️',
+        title: 'Regulatory Compliance',
+        desc: 'Approved templates reduce the risk of bans/spam flags.',
     },
     {
-        emoji: '🧠',
-        title: 'Intelligent Learning & Adaptation',
-        desc: 'Uses Natural Language Processing (NLP) and machine learning to understand customer intent, context, and sentiment. Improves over time based on real interactions and training.',
+        emoji: '⚡',
+        title: 'Automation Friendly',
+        desc: 'Easily integrated into CRM or chatbot flows.',
     },
 ];
 
 const whyChoosePoints = [
-    '10x productivity boost for your team',
-    'Always-on, AI-driven customer engagement',
-    'Deep integration with Chatmentorz ecosystem',
-    'Reduces manual effort & accelerates growth',
-    'Scales effortlessly with your business'
+    'Communicate with thousands of customers at once',
+    'Use pre-approved templates to ensure compliance (WhatsApp API, etc.)',
+    'Personalize every broadcast with dynamic variables (name, order ID, etc.)',
+    'Drive higher engagement and conversions through consistent messaging',
+    'Manage all campaigns from a single, easy-to-use dashboard',
 ];
 
 const faqs = [
     {
-        q: 'What is an AI Agent?',
-        a: 'An AI Agent is a virtual assistant powered by artificial intelligence that can understand, respond to, and take actions based on customer messages. It mimics human-like conversations and performs tasks such as answering FAQs, recommending products, handling bookings, and routing chats.',
+        q: 'What is a template message?',
+        a: 'A template message is a pre-approved, structured message used for sending standardized content (e.g., order confirmations, payment reminders, updates) via platforms like WhatsApp Business API, SMS, or email—especially outside the 24-hour reply window.',
     },
     {
-        q: 'How is an AI Agent different from a chatbot?',
-        a: 'Chatbots are often rule-based and respond to specific commands or keywords. AI Agents go further by using Natural Language Processing (NLP) and machine learning to understand context, intent, and sentiment, offering more natural and intelligent conversations.',
+        q: 'What is broadcasting in messaging?',
+        a: 'Broadcasting means sending the same message to multiple recipients at once, using approved templates, to communicate: Promotions Alerts Announcements Campaigns',
     },
     {
-        q: 'What can an AI Agent do?',
-        a: 'Common capabilities include: Answering FAQs Recommending products/services Booking appointments Collecting customer data Routing conversations to human agents Running surveys or feedback forms Triggering workflows or automations in the CRM',
+        q: 'Where can I use template messages?',
+        a: 'You can use template messages across: WhatsApp Business API SMS platforms Email marketing tools Messenger / Telegram bots Voice automation (IVR systems).',
     },
     {
-        q: 'Are AI Agents available 24/7?',
-        a: 'Yes. AI Agents operate 24/7, allowing you to provide instant responses to customers even outside business hours, improving response time and customer satisfaction.',
+        q: 'Why do template messages need approval?',
+        a: 'Messaging platforms like WhatsApp require template messages to be reviewed and approved before they can be used. This ensures that the content is not spammy or abusive and aligns with their policies for user safety and experience.',
     },
     {
-        q: 'Can I customize the AI Agent for my business needs?',
-        a: 'Absolutely. You can configure: Custom responses Business-specific workflows Multi-language support Product catalogs Integration with your backend systems (CRM, ERP, etc.)',
+        q: 'Can I personalize template messages?',
+        a: 'Yes, personalization is a core feature of template messaging. Templates include variables that are dynamically replaced with user-specific information when the message is sent.',
     },
     {
-        q: 'Can the AI Agent escalate to a human agent?',
-        a: 'Yes. If the AI cannot resolve an issue or detects complex intent, it can automatically escalate the conversation to a live agent with full context.',
+        q: 'Is customer consent required before sending broadcasts?',
+        a: 'The number of users you can reach in one broadcast depends on the platform you’re using. For instance, WhatsApp has a tiered messaging limit system: Tier 1 allows sending messages to 1,000 users per day, Tier 2 allows 10,000, and so on.',
     },
 ];
 
@@ -220,43 +204,43 @@ function FAQItem({ q, a, defaultOpen = false }) {
 }
 
 /* ─────────────── Main Component ─────────────── */
-export default function AiAgent() {
+export default function TemplateMessagingBroadcasting() {
     return (
         <div className="font-sans">
 
             {/* ── 1. Hero ── */}
             <section className="relative pt-32 pb-40 overflow-hidden flex items-center justify-center bg-gray-100">
                 <div className="absolute inset-0 z-0">
-                    <img src={bgImage} alt="AI Agent Background" className="w-full h-full object-cover object-center opacity-40 blur-[2px]" />
+                    <img src={bgImage} alt="Template Messaging & Broadcasting Background" className="w-full h-full object-cover object-center opacity-40 blur-[2px]" />
                     <div className="absolute inset-0 bg-white/40 mix-blend-overlay" />
                 </div>
                 <div className="relative z-10 text-center flex flex-col items-center">
-                    <h1 className="text-5xl md:text-6xl font-bold text-[#1f2937] mb-4">AI AGENT</h1>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1f2937] mb-4 px-4">Template Messaging & Broadcasting</h1>
                     <div className="flex items-center space-x-2 text-[15px] font-medium">
                         <Link to="/" className="flex items-center text-[#1f2937] hover:text-[#01ab4a] transition-colors">
                             <Home size={16} className="mr-1.5 mb-[2px]" />
                             Home
                         </Link>
                         <ChevronRight size={16} className="text-gray-500" />
-                        <span className="text-[#01ab4a]">AI AGENT</span>
+                        <span className="text-[#01ab4a]">Template Messaging & Broadcasting</span>
                     </div>
                 </div>
             </section>
 
-            {/* ── 2. Intro Section ── */}
+            {/* ── 2. Reach More. Engage Better. Sell Faster. ── */}
             <section className="max-w-7xl mx-auto px-6 lg:px-16 py-20 flex flex-col lg:flex-row items-center gap-14 bg-white">
                 <div className="flex-1">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                        Boost Your Team Productivity 10x with AI Mate
+                        Reach More. Engage Better.<br />Sell Faster.
                     </h2>
                     <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
-                        Meet AI Mate, your smart digital teammate — tightly integrated with the ChatMentorz product ecosystem. From handling customer conversations to automating repetitive tasks, AI Mate works 24/7 to supercharge your business efficiency.
+                        With ChatMentorz’s broadcasting and template messaging, you can send personalized, high-volume messages across WhatsApp, Facebook, Instagram, and Telegram — all in one go. Keep your audience engaged, nurture leads, and drive more conversions with ease.
                     </p>
                 </div>
                 <div className="flex-1 flex justify-center">
                     <img
-                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&q=80"
-                        alt="AI Agent Interface Mockup"
+                        src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=500&q=80"
+                        alt="Template Messaging & Broadcasting"
                         className="w-full max-w-[500px] object-cover rounded-xl shadow-lg"
                     />
                 </div>
@@ -264,18 +248,18 @@ export default function AiAgent() {
 
             {/* ── 3. Client Logos Strip ── */}
             <TrustLogos />
-
-            {/* ── 4. What AI Mate Can Do (Grid) ── */}
+            
+            {/* ── 4. What You Can Do (Grid) ── */}
             <section className="bg-white py-20 px-6 lg:px-16 border-t border-gray-100">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">How It's Work</p>
+                        <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">How it's work</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            What AI Mate Can Do
+                            What You Can Do
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {whatAiMateCanDo.map((s, i) => (
+                        {whatYouCanDo.map((s, i) => (
                             <div key={i} className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center border border-gray-100 hover:shadow-lg transition-shadow">
                                 <div className={`w-20 h-20 rounded-full ${s.bg} flex items-center justify-center ${s.color} mb-5`}>
                                     {s.icon}
@@ -288,27 +272,26 @@ export default function AiAgent() {
                 </div>
             </section>
 
-            {/* ── 5. Available Actions & Prompts (2-Column with Green Cards) ── */}
+            {/* ── 5. Key Features – Template Messaging & Broadcasting (2-Column with Green Cards) ── */}
             <section className="bg-[#edf4ed] py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
                     {/* Left: Illustration */}
                     <div className="flex-1 flex justify-center">
                         <img
-                            src="https://images.unsplash.com/photo-1655393001768-d946c998b49f?w=500&q=80"
-                            alt="Available Actions and Prompts"
+                            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&q=80"
+                            alt="Key Features Template Messaging"
                             className="w-full max-w-[450px] rounded-xl object-cover shadow-md"
                         />
                     </div>
                     {/* Right: Title + Green Feature Cards */}
                     <div className="flex-1">
-
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                            Available Actions & Prompts
+                            Key Features – Template Messaging & Broadcasting
                         </h2>
                         <div className="flex flex-col gap-4">
-                            {availableActions.map((item, i) => (
+                            {keyFeaturesList.map((item, i) => (
                                 <div key={i} className="bg-[#01ab4a] text-white px-8 py-5 rounded-lg w-full shadow-sm flex items-center gap-4">
-                                    <h4 className="text-[17px] font-semibold m-0">{item.title}</h4>
+                                    <h4 className="text-[15px] font-semibold m-0">{item.title}</h4>
                                 </div>
                             ))}
                         </div>
@@ -316,13 +299,13 @@ export default function AiAgent() {
                 </div>
             </section>
 
-            {/* ── 6. Benefits of Using an AI Agent ── */}
+            {/* ── 6. Benefits of Using Template Messaging & Broadcasting ── */}
             <section className="bg-white py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <p className="text-[#01ab4a] text-[15px] font-semibold mb-2">Benefits</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                            Benefits of Using an AI Agent
+                            Benefits of Using Template Messaging & Broadcasting
                         </h2>
                     </div>
 
@@ -340,14 +323,14 @@ export default function AiAgent() {
                 </div>
             </section>
 
-            {/* ── 7. Why AI Mate? Section ── */}
+            {/* ── 7. Key Benefits Checklist ── */}
             <section className="bg-[#edf4ed] py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
                     {/* Left: Text & Bullet Checklist */}
                     <div className="flex-1">
                         <p className="text-[#01ab4a] text-[14px] font-semibold mb-3">About Us</p>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                            Why AI Mate?
+                            Key Benefits
                         </h2>
                         <ul className="flex flex-col gap-3 mb-8">
                             {whyChoosePoints.map((point, i) => (
@@ -358,7 +341,7 @@ export default function AiAgent() {
                             ))}
                         </ul>
                         <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
-                            👉 With AI Mate, your team gets a powerful AI Agent that never sleeps, never misses a lead, and helps you scale faster than ever before.
+                            👉 With ChatMentorz Template Messaging & Broadcasting, you don’t just send messages — you build conversations that convert.
                         </p>
                         <Link
                             to="/contact-us"
