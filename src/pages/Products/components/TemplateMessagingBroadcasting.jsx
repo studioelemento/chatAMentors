@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../../../components/Seo/Seo';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
 import TrustLogos from './TrustLogos';
 import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaGlobe, FaCalendarAlt } from 'react-icons/fa';
@@ -206,6 +207,12 @@ function FAQItem({ q, a, defaultOpen = false }) {
 /* ─────────────── Main Component ─────────────── */
 export default function TemplateMessagingBroadcasting() {
     return (
+        <>
+        <SEO
+      title="Template Messaging & Broadcasting"
+      description="Send personalized, high-volume messages across WhatsApp, Facebook, Instagram, and Telegram — all in one go."
+      canonical="https://chatamentors.com/template-messaging-broadcasting"
+    />
         <div className="font-sans">
 
             {/* ── 1. Hero ── */}
@@ -372,5 +379,6 @@ export default function TemplateMessagingBroadcasting() {
             </section>
 
         </div>
+        </>
     );
 }

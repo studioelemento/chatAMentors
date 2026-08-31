@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../../../components/Seo/Seo';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
 import TrustLogos from './TrustLogos';
 import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaGlobe, FaCalendarAlt } from 'react-icons/fa';
@@ -230,6 +231,12 @@ function FAQItem({ q, a, defaultOpen = false }) {
 /* ─────────────── Main Component ─────────────── */
 export default function WhatsappCommerce() {
     return (
+        <> 
+        <SEO
+      title="WhatsApp Commerce"
+      description="Transform WhatsApp into a full-fledged online store with product catalogs, cart management, and automated checkout."
+      canonical="https://chatamentors.com/whatsapp-commerce"
+    />
         <div className="font-sans">
 
             {/* ── Hero ── */}
@@ -415,5 +422,6 @@ export default function WhatsappCommerce() {
             </section>
 
         </div>
+        </>
     );
 }

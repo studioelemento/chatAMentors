@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../../../components/Seo/Seo';
 import TrustLogos from './TrustLogos';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
 import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaGlobe, FaCalendarAlt } from 'react-icons/fa';
@@ -236,6 +237,12 @@ function FAQItem({ q, a, defaultOpen = false }) {
 /* ─────────────── Main Component ─────────────── */
 export default function OmniChannelCRM() {
     return (
+        <>
+        <SEO
+      title="Omni Channel CRM – All-in-One Customer Management"
+      description="Manage WhatsApp, Facebook, Instagram, Telegram & more in one CRM. Track leads, automate conversations & boost sales with chatAMentors."
+      canonical="https://chatamentors.com/omni-channel-crm"
+    />
         <div className="font-sans">
 
             {/* ── Hero ── */}
@@ -413,5 +420,6 @@ export default function OmniChannelCRM() {
             </section>
 
         </div>
+        </>
     );
 }

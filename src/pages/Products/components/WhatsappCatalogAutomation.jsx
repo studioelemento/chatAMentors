@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../../../components/Seo/Seo';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
 import TrustLogos from './TrustLogos';
 import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaCalendarAlt, FaGlobe } from 'react-icons/fa';
@@ -250,6 +251,12 @@ function FAQItem({ q, a, defaultOpen = false }) {
 /* ─────────────── Main Component ─────────────── */
 export default function WhatsappCatalogAutomation() {
     return (
+        <>
+        <SEO
+      title="WhatsApp Catalog Automation"
+      description="Manage products, showcase offerings, and automate sales directly inside WhatsApp — no app or website needed."
+      canonical="https://chatamentors.com/whatsapp-catalog-automation"
+    />
         <div className="font-sans">
 
             {/* ── 1. Hero ── */}
@@ -417,5 +424,6 @@ export default function WhatsappCatalogAutomation() {
             </section>
 
         </div>
+        </>
     );
 }

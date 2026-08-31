@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../../../components/Seo/Seo';
 import TrustLogos from './TrustLogos';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
 import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaCalendarAlt, FaGlobe } from 'react-icons/fa';
@@ -222,6 +223,13 @@ function FAQItem({ q, a, defaultOpen = false }) {
 /* ─────────────── Main Component ─────────────── */
 export default function AiAgent() {
     return (
+        <>
+            <SEO
+                title="AI Agent – Smart Virtual Assistant | chatAMentors"
+                description="AI Agents from chatAMentors automate customer support, boost sales, and improve team productivity. Available 24/7 across WhatsApp, Instagram, Facebook, Telegram & Web."
+                canonical="https://chatamentors.com/ai-agents"
+            />
+
         <div className="font-sans">
 
             {/* ── 1. Hero ── */}
@@ -389,5 +397,6 @@ export default function AiAgent() {
             </section>
 
         </div>
+        </>
     );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../../../components/Seo/Seo';
 import TrustLogos from './TrustLogos';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
 import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaGlobe, FaCalendarAlt } from 'react-icons/fa';
@@ -221,6 +222,12 @@ function FAQItem({ q, a, defaultOpen = false }) {
 /* ─────────────── Main Component ─────────────── */
 export default function OmniChannelTeamInbox() {
   return (
+    <>
+    <SEO
+      title="Omni Channel Team Inbox – Unified Customer Communication | chatAMentors"
+      description="Manage WhatsApp, SMS, Instagram, Facebook & voice chats in one unified inbox. Improve response time & customer satisfaction with chatAMentors’ Omni Channel Team Inbox."
+      canonical="https://chatamentors.com/omni-channel-team-inbox"
+    />
     <div className="font-sans">
 
       {/* ── Hero ── */}
@@ -389,5 +396,6 @@ export default function OmniChannelTeamInbox() {
       </section>
 
     </div>
+    </>
   );
 }

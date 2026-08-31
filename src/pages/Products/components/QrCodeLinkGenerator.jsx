@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../../../components/Seo/Seo';
 import TrustLogos from './TrustLogos';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
 import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaGlobe, FaCalendarAlt } from 'react-icons/fa';
@@ -225,6 +226,12 @@ function FAQItem({ q, a, defaultOpen = false }) {
 /* ─────────────── Main Component ─────────────── */
 export default function QrCodeLinkGenerator() {
     return (
+         <>
+        <SEO
+      title="QR Code & Link Generator"
+      description="Generate QR codes and smart links for WhatsApp, payments, marketing campaigns, and seamless offline-to-online connectivity."
+      canonical="https://chatamentors.com/qr-code-link-generator"
+    />
         <div className="font-sans">
 
             {/* ── 1. Hero ── */}
@@ -391,5 +398,6 @@ export default function QrCodeLinkGenerator() {
             </section>
 
         </div>
+         </>
     );
 }

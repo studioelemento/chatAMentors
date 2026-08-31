@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import TrustLogos from './TrustLogos';
+import SEO from '../../../components/Seo/Seo';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
 import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaCalendarAlt, FaSkype } from 'react-icons/fa';
 import bgImage from '../../../assets/img-Home/chat-bot-service-concept-enhancing-customer-experience-with-virtual-assistant-1.png';
@@ -242,6 +243,12 @@ function FAQItem({ q, a, defaultOpen = false }) {
 /* ─────────────── Main Component ─────────────── */
 export default function SmartKeywordAutomation() {
     return (
+        <>
+        <SEO
+      title="Smart Keyword Automation"
+      description="Trigger actions, messages, and workflows based on customer keywords — zero manual intervention required."
+      canonical="https://chatamentors.com/smart-keyword-automation"
+    />
         <div className="font-sans">
 
             {/* ── 1. Hero ── */}
@@ -426,5 +433,6 @@ export default function SmartKeywordAutomation() {
             </section>
 
         </div>
+         </>
     );
 }

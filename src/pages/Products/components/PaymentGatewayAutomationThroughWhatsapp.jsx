@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../../../components/Seo/Seo';
 import TrustLogos from './TrustLogos';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
 import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaGlobe, FaCalendarAlt } from 'react-icons/fa';
@@ -221,6 +222,12 @@ function FAQItem({ q, a, defaultOpen = false }) {
 /* ─────────────── Main Component ─────────────── */
 export default function PaymentGatewayAutomationThroughWhatsapp() {
     return (
+         <>
+        <SEO
+      title="Payment Gateway Automation Through WhatsApp"
+      description="Integrate payment gateways with WhatsApp Business API for seamless payments, instant receipts, and automated order management."
+      canonical="https://chatamentors.com/payment-gateway-automation-through-whatsapp"
+    />
         <div className="font-sans">
 
             {/* ── 1. Hero ── */}
@@ -387,5 +394,6 @@ export default function PaymentGatewayAutomationThroughWhatsapp() {
             </section>
 
         </div>
+        </>
     );
 }

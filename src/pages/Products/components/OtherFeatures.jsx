@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../../../components/Seo/Seo';
 import TrustLogos from './TrustLogos';
 import { Home, ChevronRight, Plus, Minus } from 'lucide-react';
 import { FaFacebook, FaFacebookMessenger, FaTwitter, FaLinkedin, FaGlobe, FaCalendarAlt } from 'react-icons/fa';
@@ -289,6 +290,12 @@ function FAQItem({ q, a, defaultOpen = false }) {
 /* ─────────────── Main Component ─────────────── */
 export default function OtherFeatures() {
     return (
+        <>  
+          <SEO
+      title="Other AI Features"
+      description="Discover ChatAMentors’ advanced AI features: No-Code Chatbot Builder, Live Agent Chat, AI Analytics, Drip Campaigns & more."
+      canonical="https://chatamentors.com/other-ai-features"
+    />
         <div className="font-sans">
 
             {/* ── 1. Hero ── */}
@@ -449,5 +456,6 @@ Sync with platforms like Shopify or WooCommerce to trigger campaigns based on cu
             </section>
 
         </div>
+        </> 
     );
 }
