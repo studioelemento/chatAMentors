@@ -11,19 +11,27 @@ export default function ContactSection() {
             <h4 className="text-gray-800 text-lg font-medium mb-2">Get In Touch</h4>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Contact With US</h2>
             <p className="text-gray-500 text-lg">
-              It is a long established fact that a reader will be distracted
+              Have questions about our WhatsApp Business solutions or need a customized automation workflow? Send us a message and our experts will get back to you within 24 hours.
             </p>
           </div>
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input 
                 type="text" 
+                id="firstName"
+                name="firstName"
+                autoComplete="given-name"
+                aria-label="First Name"
                 placeholder="First Name" 
                 className="w-full bg-[#f1f1f1] text-gray-700 px-6 py-4 rounded-full focus:outline-none focus:ring-2 focus:ring-[#01ab4a]/50 transition-all placeholder-gray-400" 
               />
               <input 
                 type="text" 
+                id="lastName"
+                name="lastName"
+                autoComplete="family-name"
+                aria-label="Last Name"
                 placeholder="Last Name" 
                 className="w-full bg-[#f1f1f1] text-gray-700 px-6 py-4 rounded-full focus:outline-none focus:ring-2 focus:ring-[#01ab4a]/50 transition-all placeholder-gray-400" 
               />
@@ -32,19 +40,30 @@ export default function ContactSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input 
                 type="email" 
+                id="email"
+                name="email"
+                autoComplete="email"
+                aria-label="Email Address"
                 placeholder="Email Address" 
                 className="w-full bg-[#f1f1f1] text-gray-700 px-6 py-4 rounded-full focus:outline-none focus:ring-2 focus:ring-[#01ab4a]/50 transition-all placeholder-gray-400" 
               />
               <input 
                 type="tel" 
-                placeholder="phone" 
+                id="phone"
+                name="phone"
+                autoComplete="tel"
+                aria-label="Phone Number"
+                placeholder="Phone Number" 
                 className="w-full bg-[#f1f1f1] text-gray-700 px-6 py-4 rounded-full focus:outline-none focus:ring-2 focus:ring-[#01ab4a]/50 transition-all placeholder-gray-400" 
               />
             </div>
 
             <textarea 
+              id="message"
+              name="message"
               rows="6" 
-              placeholder="Message" 
+              aria-label="Your Message"
+              placeholder="How can we help your business?" 
               className="w-full bg-[#f1f1f1] text-gray-700 px-6 py-5 rounded-[2rem] focus:outline-none focus:ring-2 focus:ring-[#01ab4a]/50 transition-all resize-none placeholder-gray-400"
             ></textarea>
 
@@ -64,7 +83,7 @@ export default function ContactSection() {
             allowFullScreen="" 
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
-            title="Location Map"
+            title="ChatMentorz Office Location in Thiruvananthapuram, Kerala"
           ></iframe>
         </div>
 
