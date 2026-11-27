@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
-import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
+import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa'
+import { Link, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
-
-// Page Imports
+import PageBanner from './components/PageBanner'
 import Home from './pages/Home/Home'
 import AboutUs from './pages/AboutUs/AboutUs'
 import Products from './pages/Products/Products'
@@ -15,76 +14,61 @@ import TermsOfService from './components/Footer/components/termsOfService'
 import CancellationRefundPolicy from './components/Footer/components/cancellationRefundPolicy'
 import Gdpr from './components/Footer/components/gdpr'
 
-// Scrolls to the hash element after route change (e.g. /about#hero)
 function ScrollToHash() {
   const { pathname, hash } = useLocation()
 
   useEffect(() => {
-    // Use a short delay so the new page's DOM is fully mounted before scrolling
-    const timer = setTimeout(() => {
-      if (hash) {
-        const id = hash.replace('#', '')
-        const el = document.getElementById(id)
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-      }
-    }, 100)
-    return () => clearTimeout(timer)
+    if (hash) {
+      document.getElementById(hash.slice(1))?.scrollIntoView()
+    } else {
+      window.scrollTo(0, 0)
+    }
   }, [pathname, hash])
 
   return null
 }
 
-function App() {
+function ProductRedirect() {
+  const { slug } = useParams()
+  const legacyProducts = ['inbox', 'whatsapp', 'crm', 'keyword', 'catalog', 'ai-agent']
+  return <Navigate replace to={legacyProducts.includes(slug) ? `/products#${slug}` : '/products'} />
+}
+
+function NotFound() {
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <>
+      <PageBanner title="Page not found" description="The page you’re looking for may have moved." />
+      <div className="section wrap"><Link className="button" to="/">Back to home</Link></div>
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <div className="flex min-h-screen flex-col">
+      <a className="button skip-link" href="#main-content">Skip to content</a>
       <Navbar />
       <ScrollToHash />
-      <main className="flex-grow">
+      <main id="main-content" className="flex-1" tabIndex={-1}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/product/:slug" element={<ProductRedirect />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/cancellation" element={<CancellationRefundPolicy />} />
           <Route path="/gdpr" element={<Gdpr />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
-
-      {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 left-6 flex flex-col gap-3 z-50">
-        <a
-          href="tel:+918921675767"
-          className="bg-[#03e78b] hover:bg-green-600 text-white p-3.5 rounded-full shadow-lg shadow-green-500/30 transition-transform hover:scale-110 flex items-center justify-center group relative"
-          aria-label="Call Us"
-        >
-          <FaPhoneAlt size={22} />
-          <span className="absolute left-full ml-4 whitespace-nowrap bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-            Call Us
-          </span>
-        </a>
-        <a
-          href="https://wa.me/918921675767"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#25D366] hover:bg-[#128C7E] text-white p-3.5 rounded-full shadow-lg shadow-[#25D366]/30 transition-transform hover:scale-110 flex items-center justify-center group relative"
-          aria-label="WhatsApp Us"
-        >
-          <FaWhatsapp size={22} />
-          <span className="absolute left-full ml-4 whitespace-nowrap bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-            WhatsApp
-          </span>
-        </a>
+      <div className="quick-contact" role="group" aria-label="Quick contact">
+        <a href="tel:+918921675767" aria-label="Call ChatMentorz"><FaPhoneAlt aria-hidden="true" size={17} /></a>
+        <a href="https://wa.me/918921675767" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><FaWhatsapp aria-hidden="true" size={22} /></a>
       </div>
     </div>
   )
 }
-
-export default App

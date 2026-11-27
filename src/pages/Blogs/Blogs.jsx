@@ -1,12 +1,14 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
+import PageBanner from '../../components/PageBanner'
 
 export default function Blogs() {
   return (
-    <div className="container mx-auto px-6 py-24 text-center">
-      <h1 className="text-4xl font-bold text-secondary mb-6">Blogs</h1>
-      <p className="text-text-muted max-w-2xl mx-auto">
-        Read the latest insights on business automation.
-      </p>
-    </div>
+    <>
+      <PageBanner title="Blog" description="Insights on business automation and customer conversations." />
+      <section className="section wrap section-intro">
+        <h2>Articles are coming soon</h2>
+        <Link className="button button-outline section-action" to="/products">Explore products</Link>
+      </section>
+    </>
   )
 }

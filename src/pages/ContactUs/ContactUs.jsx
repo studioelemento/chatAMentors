@@ -1,15 +1,11 @@
-import React from 'react';
-import Hero from './components/Hero';
-import ContactSection from './components/ContactSection';
-import BottomSection from './components/BottomSection';
+import PageBanner from '../../components/PageBanner'
+import ContactSection from './components/ContactSection'
 
 export default function ContactUs() {
   return (
-    <div className="w-full">
-      <Hero />
+    <>
+      <PageBanner label="Contact" title="Let’s talk about your business" description="Ask about ChatMentorz, request a demo, or tell us where you’d like help with automation." />
       <ContactSection />
-      <BottomSection />
-    </div>
-  );
+    </>
+  )
 }
-
